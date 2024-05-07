@@ -1,12 +1,16 @@
-import AppContainer from './components/AppContainer/AppContainer'
-import Header from './components/Header/Header'
-import Calendar from './components/Calendar/Calendar'
+import { useState } from 'react'
+import AppHeader from './components/AppHeader/AppHeader'
+import { getComponent } from './util'
 
-const App = () => (
-	<AppContainer>
-		<Header />
-		<Calendar />
-	</AppContainer>
-)
+const App = () => {
+	const [activeComponent, setActiveComponent] = useState('Calculator')
+	const Component = getComponent(activeComponent)
+	return (
+		<>
+			<AppHeader setActiveComponent={setActiveComponent} />
+			<Component />
+		</>
+	)
+}
 
 export default App
