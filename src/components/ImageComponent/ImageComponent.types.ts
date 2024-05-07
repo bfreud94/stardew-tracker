@@ -3,4 +3,5 @@ export interface ImageComponentProps {
 	fileName: string
 	height?: string
 	width?: string
+	onClick?: () => void
 }
