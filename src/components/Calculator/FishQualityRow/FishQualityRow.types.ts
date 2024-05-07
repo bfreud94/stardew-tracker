@@ -10,4 +10,5 @@ export interface FishQualityRowProps {
 
 export interface FishQualityRowStyles {
 	fishAmountInput: CSSProperties
+	fishQualityRow: CSSProperties
 }

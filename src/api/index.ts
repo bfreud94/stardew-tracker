@@ -56,46 +56,46 @@ export const data: Data = {
 	items: {
 		fish: {
 			Bream: {
-				normal: 45,
-				silver: 56,
-				gold: 67,
-				iridium: 90
+				Normal: 45,
+				Silver: 56,
+				Gold: 67,
+				Iridium: 90
 			},
 			Bullhead: {
-				normal: 75,
-				silver: 93,
-				gold: 112,
-				iridium: 150
+				Normal: 75,
+				Silver: 93,
+				Gold: 112,
+				Iridium: 150
 			},
 			Carp: {
-				normal: 30,
-				silver: 37,
-				gold: 45,
-				iridium: 60
+				Normal: 30,
+				Silver: 37,
+				Gold: 45,
+				Iridium: 60
 			},
 			Catfish: {
-				normal: 200,
-				silver: 250,
-				gold: 300,
-				iridium: 400
+				Normal: 200,
+				Silver: 250,
+				Gold: 300,
+				Iridium: 400
 			},
 			Chub: {
-				normal: 50,
-				silver: 62,
-				gold: 75,
-				iridium: 100
+				Normal: 50,
+				Silver: 62,
+				Gold: 75,
+				Iridium: 100
 			},
 			'LM Bass': {
-				normal: 100,
-				silver: 125,
-				gold: 150,
-				iridium: 200
+				Normal: 100,
+				Silver: 125,
+				Gold: 150,
+				Iridium: 200
 			},
 			Shad: {
-				normal: 60,
-				silver: 75,
-				gold: 90,
-				iridium: 120
+				Normal: 60,
+				Silver: 75,
+				Gold: 90,
+				Iridium: 120
 			}
 		}
 	}

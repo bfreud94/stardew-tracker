@@ -14,7 +14,7 @@ const FishContainer: FC = () => {
 			<FishHeader grandTotal={grandTotal} setFishState={setFishState} />
 			<div style={styles.fishNameContainer}>
 				{Object.keys(data.items.fish).map((fishName) => 
-					<FishGroup fishName={fishName} fishState={fishState} setFishState={setFishState} />
+					<FishGroup key={fishName} fishName={fishName} fishState={fishState} setFishState={setFishState} />
 				)}
 			</div>
 		</>

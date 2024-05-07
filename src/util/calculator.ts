@@ -1,6 +1,14 @@
 import { data } from '../api/index'
+import { SetFishStateAction } from '../types/index'
 
-export const ellipses = ' . . . . . . '
+export const getEllipses = (number: number): string => {
+	let ellipses = ' . . . . . . '
+	while (number > 1) {
+		number /= 10
+		ellipses = ellipses.slice(0, -1)
+	}
+	return ellipses
+}
 
 export const createState = (): Record<string, any> => Object.keys(data.items.fish)
 	.reduce((acc: Record<string, any>, fishName) => {
@@ -28,7 +36,11 @@ export const getTotalForFish = (fishItem: any, fishName: string, fishState: Reco
 		return acc + total
 	}, 0)
 
-export const resetFishAmount = (fishName: string, fishState: Record<string, any>, setFishState: (fishState: Record<string, any>) => void) => {
+export const resetFishAmount = (
+	fishName: string,
+	fishState: Record<string, any>,
+	setFishState: SetFishStateAction
+) => {
 	const fishItem = data.items.fish[fishName]
 	const fishItemQualityAmounts = Object.keys(fishItem).reduce((acc: Record<string, any>, quality) => {
 		acc[quality] = 0

@@ -1,23 +1,24 @@
 import { FC } from 'react'
 import { data } from '../../../api/index'
-import { getTotalForFish, resetFishAmount } from '../../../util'
-import { FishGroupProps } from './FishGroup.types'
+import { getTotalForFish } from '../../../util'
+import FishGroupHeader from '../FishGroupHeader/FishGroupHeader'
 import FishQualityRow from '../FishQualityRow/FishQualityRow'
+import makeStyles from './FishGroup.styles'
+import { FishGroupProps } from './FishGroup.types'
 
 const FishGroup: FC<FishGroupProps> = ({
 	fishName,
 	fishState,
 	setFishState
 }) => {
+	const styles = makeStyles()
 	const fishItem = data.items.fish[fishName]
-	const totalForFish = getTotalForFish(fishItem, fishName, fishState)
 	const fishItemQualityComponents = Object.keys(fishItem).map((quality) => (
-		<FishQualityRow fishItem={fishItem} fishName={fishName} fishState={fishState} quality={quality} setFishState={setFishState} />
+		<FishQualityRow key={quality} fishItem={fishItem} fishName={fishName} fishState={fishState} quality={quality} setFishState={setFishState} />
 	))
 	return (
-		<div>
-			<span>{fishName} {totalForFish}</span>
-			<button onClick={() => resetFishAmount(fishName, fishState, setFishState)}>Reset</button>
+		<div style={styles.fishGroup}>
+			<FishGroupHeader fishItem={fishItem} fishName={fishName} fishState={fishState} setFishState={setFishState} />
 			<div key={fishName}>
 				{fishItemQualityComponents}
 			</div>
