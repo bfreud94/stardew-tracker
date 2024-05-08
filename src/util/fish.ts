@@ -51,7 +51,7 @@ export const getFishQualityRowText = (
 	total: number
 ) => {
 	const ellipses = getEllipses(total)
-	let textRightOfInput = `${ellipses} ${total}`
+	const textRightOfInput = `${ellipses} ${total}`
 	const fishNameAndQuality = `${fishName} (${quality}) :`
 	const multiplier = `${fishItemValue} x`
 	return {

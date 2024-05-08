@@ -1,21 +1,12 @@
+
 export interface Data {
 	season: number
 	birthdays: Array<Person>
 	items: {
-		fish: {
-			[key: string]: {
-				[key: string]: number
-			}
-		},
-		gems: {
-			[key: string]: number
-		},
-		minerals: {
-			[key: string]: number
-		},
-		geodes: {
-			[key: string]: number
-		}
+		fish: Record<string, Record<string, number>>
+		gems: Record<string, number>
+		minerals: Record<string, number>
+		geodes: Record<string, number>
 	}
 }
 
@@ -108,25 +99,25 @@ export const data: Data = {
 			}
 		},
 		gems: {
-			prismaticShard: 2000,
-			diamond: 750,
-			emerald: 250,
-			ruby: 250,
-			jade: 200,
-			aquamarine: 180,
-			amethyst: 100,
-			topaz: 80
+			'Prismatic Shard': 2000,
+			Diamond: 750,
+			Emerald: 250,
+			Ruby: 250,
+			Jade: 200,
+			Aquamarine: 180,
+			Amethyst: 100,
+			Topaz: 80
 		},
 		minerals: {
-			fireQuartz: 100,
-			frozenTear: 75,
-			quartz: 25,
-			earthCrystal: 50
+			'Fire Quartz': 100,
+			'Frozen Tear': 75,
+			'Earth Crystal': 50,
+			Quartz: 25
 		},
 		geodes: {
-			magma: 150,
-			frozen: 100,
-			normal: 50
+			Magma: 150,
+			Frozen: 100,
+			Normal: 50
 		}
 	}
 }
