@@ -3,7 +3,7 @@ import AppHeader from './components/AppHeader/AppHeader'
 import { getComponent } from './util'
 
 const App = () => {
-	const [activeComponent, setActiveComponent] = useState('Calendar')
+	const [activeComponent, setActiveComponent] = useState('Calculator')
 	const Component = getComponent(activeComponent)
 	return (
 		<>

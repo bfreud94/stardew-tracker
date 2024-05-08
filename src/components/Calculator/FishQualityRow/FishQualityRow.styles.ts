@@ -10,8 +10,8 @@ const makeStyles = (): FishQualityRowStyles => ({
 		width: '50px'
 	},
 	fishQualityRow: {
-		display: 'flex',
-		justifyContent: 'space-between'
+		display: 'inline-grid',
+		gridTemplateColumns: 'repeat(4, 1fr)'
 	}
 })
 

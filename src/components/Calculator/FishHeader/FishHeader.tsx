@@ -1,8 +1,9 @@
 import { FC } from 'react'
-import { createState } from '../../../util/index'
+import { createFishState } from '../../../util/index'
+import { data } from '../../../api'
+import ResetButton from '../ResetButton/ResetButton'
 import makeStyles from './FishHeader.styles'
 import { FishHeaderProps } from './FishHeader.types'
-import ResetButton from '../ResetButton/ResetButton'
 
 const FishHeader: FC<FishHeaderProps> = ({
 	grandTotal,
@@ -12,7 +13,7 @@ const FishHeader: FC<FishHeaderProps> = ({
 	return (
 		<h3 style={styles.fishHeader}>
 			Fish {grandTotal}
-			<ResetButton buttonText='Reset All' resetFunction={setFishState} functionArgs={[createState()]} />
+			<ResetButton buttonText='Reset All' resetFunction={setFishState} functionArgs={[createFishState()]} />
 		</h3>
 	)
 }

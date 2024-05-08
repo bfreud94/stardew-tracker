@@ -1,27 +1,36 @@
 import { FC } from 'react'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import ImageComponent from '../../ImageComponent/ImageComponent'
 import Modal from '@mui/material/Modal'
+import Box from '@mui/material/Box'
 import makeStyles from './NoteModal.styles'
 import { NoteModalProps } from './NoteModal.types'
+import { Typography } from '@mui/material'
+
+const BirthdaySection = () => {
+	return (
+		<div style={{ display: 'flex', justifyContent: 'space-between'}}>
+			<ImageComponent altText='Birthday' fileName='/Birthday.png' height='37px' width='29px' />
+			<Typography style={{ alignSelf: 'center', textAlign: 'center', fontSize: '18px', fontFamily: 'SVFont' }} variant='h6'>Birthday</Typography>
+		</div>
+	)
+}
 
 const NoteModal: FC<NoteModalProps> = ({
+	birthday,
 	open,
 	handleClose
 }) => {
 	const styles = makeStyles()
+	const images = ['Birthday', 'Stardrop', 'Gold', 'SecretNote', 'Flag']
 	return (
 		<div>
 			<Modal open={open} onClose={handleClose}>
 				<Box sx={styles.noteModal}>
-					<Typography style={{ fontFamily: 'SVFont' }} id='modal-modal-title' variant='h6' component='h2'>
-						<ImageComponent altText='Birthday' fileName='/Birthday.png' height='37px' width='29px' />
-						<ImageComponent altText='Stardrop' fileName='/Stardrop.png' height='36px' width='36px' />
-						<ImageComponent altText='Gold' fileName='/Gold.png' height='36px' width='36px' />
-						<ImageComponent altText='Secret Note' fileName='/SecretNote.png' height='36px' width='36px' />
-						<ImageComponent altText='Flag' fileName='/Flag.png' height='32px' width='32px' />
-					</Typography>
+					<div style={{ display: 'flex', flexDirection: 'column' }}>
+						{images.map((image, index) => (
+							<ImageComponent style={{ margin: '0px 0px 40px 0px' }} altText={image} fileName={`/${image}.png`} height='36px' width='36px' key={index} />
+						))}
+					</div>
 				</Box>
 			</Modal>
 		</div>

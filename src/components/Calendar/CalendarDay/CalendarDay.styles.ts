@@ -9,6 +9,7 @@ const makeStyles = (): CalendarDayStyles => ({
 		fontSize: '32px',
         height: '200px',
         justifyContent: 'center',
+		cursor: 'pointer',
         width: '200px'
 	},
 	dayNumber: {

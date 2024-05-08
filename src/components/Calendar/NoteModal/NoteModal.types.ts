@@ -1,6 +1,7 @@
 import { CSSProperties } from 'react'
 
 export interface NoteModalProps {
+	birthday: string
 	open: boolean
 	handleClose: () => void
 }
@@ -11,6 +12,7 @@ export interface NoteModalStyles {
 		top: CSSProperties['top']
 		left: CSSProperties['left']
 		transform: CSSProperties['transform']
+		height: CSSProperties['height']
 		width: CSSProperties['width']
 		bgcolor: string
 		border: CSSProperties['border']

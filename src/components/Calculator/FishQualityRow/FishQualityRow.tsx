@@ -1,25 +1,8 @@
-import { FC } from 'react'
-import { getEllipses } from '../../../util'
+import { ChangeEvent, FC } from 'react'
+import { getFishQualityRowText } from '../../../util'
 import makeStyles from './FishQualityRow.styles'
 import { FishQualityRowProps } from './FishQualityRow.types'
-
-const getFishQualityRowText = (
-	fishName: string,
-	fishItemValue: number,
-	quality: string,
-	total: number
-) => {
-	const ellipses = getEllipses(total)
-	let textRightOfInput = `${ellipses} ${total}`
-	const fishNameAndQuality = `${fishName} (${quality}) :`
-	const multiplier = `${fishItemValue} x`
-	return {
-		fishNameAndQuality,
-		multiplier,
-		textRightOfInput
-	}
-}
-
+import ItemWithInput from '../ItemWithInput/ItemWithInput'
 
 const FishQualityRow: FC<FishQualityRowProps> = ({
 	fishItem,
@@ -35,9 +18,7 @@ const FishQualityRow: FC<FishQualityRowProps> = ({
 	const { fishNameAndQuality, multiplier, textRightOfInput } = getFishQualityRowText(fishName, fishItemValue, quality, total)
 	return (
 		<div key={quality} style={styles.fishQualityRow}>
-			<span>{fishNameAndQuality}</span>
-			<span>{multiplier}</span>
-			<input style={styles.fishAmountInput} type='text' onChange={(e) => {
+			<ItemWithInput itemName={fishNameAndQuality} costAndMultiplier={multiplier} ellipsesAndTotal={textRightOfInput} onChange={(e: ChangeEvent<HTMLInputElement>) => {
 				setFishState({
 					...fishState,
 					[fishName]: {
@@ -45,8 +26,7 @@ const FishQualityRow: FC<FishQualityRowProps> = ({
 						[quality]: e.target.value
 					}
 				})
-			}} value={fishAmount}/>
-			{textRightOfInput}
+			}} value={fishAmount} />
 		</div>
 	)
 }

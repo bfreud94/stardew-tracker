@@ -6,6 +6,15 @@ export interface Data {
 			[key: string]: {
 				[key: string]: number
 			}
+		},
+		gems: {
+			[key: string]: number
+		},
+		minerals: {
+			[key: string]: number
+		},
+		geodes: {
+			[key: string]: number
 		}
 	}
 }
@@ -97,6 +106,27 @@ export const data: Data = {
 				Gold: 90,
 				Iridium: 120
 			}
+		},
+		gems: {
+			prismaticShard: 2000,
+			diamond: 750,
+			emerald: 250,
+			ruby: 250,
+			jade: 200,
+			aquamarine: 180,
+			amethyst: 100,
+			topaz: 80
+		},
+		minerals: {
+			fireQuartz: 100,
+			frozenTear: 75,
+			quartz: 25,
+			earthCrystal: 50
+		},
+		geodes: {
+			magma: 150,
+			frozen: 100,
+			normal: 50
 		}
 	}
 }

@@ -23,7 +23,7 @@ const CalendarDay: FC<CalendarDayProps> = ({ day }) => {
     return (
         <div style={styles.day} onClick={handleOpen}>
             <p style={styles.dayNumber}>{day}</p>
-			<NoteModal open={open} handleClose={handleClose} />
+			<NoteModal birthday={birthday} open={open} handleClose={handleClose} />
         </div>
     )
 }
