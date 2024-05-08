@@ -11,9 +11,10 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 	state,
 	setState
 }) => {
+	const styles = makeStyles()
 	const item = data.items[itemName as keyof typeof data.items]
 	return (
-		<div style={{ display: 'flex', flexDirection: 'column' }}>
+		<div style={styles.otherItemComponent}>
 			<OtherItemHeader item={itemName} state={state} setState={setState} />
 			{Object.keys(item).map((subItemName: any) => {
 				const items = state[itemName as keyof typeof state]
@@ -22,7 +23,7 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 				const ellipsesAndTotal = `${getEllipses(total)} ${total}`
 				const costAndMultiplier = `${item[subItemName]} x`
 				return (
-					<div key={subItemName} style={{ display: 'inline-grid', gridTemplateColumns: 'repeat(4, 1fr)', width: '500px' }}>
+					<div key={subItemName} style={styles.inputContainer}>
 						<ItemWithInput itemName={subItemName} costAndMultiplier={costAndMultiplier} ellipsesAndTotal={ellipsesAndTotal} onChange={(e: ChangeEvent<HTMLInputElement>) => {
 							setState({
 								...state,

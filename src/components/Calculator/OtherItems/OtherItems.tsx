@@ -3,9 +3,9 @@ import { data } from '../../../api/index'
 import { createOtherItemsState, getTotalForOtherItems } from '../../../util'
 import OtherItemsHeader from './OtherItemsHeader/OtherItemsHeader'
 import OtherItemComponent from './OtherItemsComponent/OtherItemsComponent'
-import { OtherItemsProps, OtherItemsState } from './OtherItems.types'
+import { OtherItemsState } from './OtherItems.types'
 
-const OtherItems: FC<OtherItemsProps> = () => {
+const OtherItems: FC = () => {
 	const [otherItemsState, setOtherItemsState] = useState<OtherItemsState>({
 		gems: createOtherItemsState(data.items.gems),
 		minerals: createOtherItemsState(data.items.minerals),

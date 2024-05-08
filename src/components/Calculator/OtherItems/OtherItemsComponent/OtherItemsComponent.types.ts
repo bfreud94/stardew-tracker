@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react'
+import { CSSProperties, Dispatch, SetStateAction } from 'react'
 import { OtherItemsState } from '../OtherItems.types'
 
 export interface OtherItemsComponentProps {
@@ -8,5 +8,6 @@ export interface OtherItemsComponentProps {
 }
 
 export interface OtherItemsComponentStyles {
-
+	inputContainer: CSSProperties
+	otherItemComponent: CSSProperties
 }
