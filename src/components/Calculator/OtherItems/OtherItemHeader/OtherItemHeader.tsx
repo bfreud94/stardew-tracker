@@ -1,9 +1,10 @@
 import { FC } from 'react'
-import { data } from '../../../../api'
 import ResetButton from '../../ResetButton/ResetButton'
-import { resetOtherItemState } from '../../../../util'
-import makeStyles from './OtherItemHeader.styles'
+import { getOtherItemSubTotal } from '../../../../util'
+import { resetOtherItemState } from '../../../../state'
+import { getFormattedOtherItem } from '../../../../copy/calculator'
 import { OtherItemHeaderProps } from './OtherItemHeader.types'
+import makeStyles from './OtherItemHeader.styles'
 
 const OtherItemHeader: FC<OtherItemHeaderProps> = ({
 	item,
@@ -11,12 +12,8 @@ const OtherItemHeader: FC<OtherItemHeaderProps> = ({
 	setState
 }) => {
 	const styles = makeStyles()
-	const itemData = data.items[item as keyof typeof data.items]
-	const itemTotal = Object.keys(itemData)
-		.reduce((acc: number, subItem: string) =>
-			acc + (Number(state[item as keyof typeof state][subItem]) * Number(itemData[subItem]))
-		, 0)
-	const formattedItem = item.charAt(0).toUpperCase() + item.slice(1)
+	const itemTotal = getOtherItemSubTotal(state, item)
+	const formattedItem = getFormattedOtherItem(item)
 	return (
 		<h3>
 			{formattedItem} {itemTotal}

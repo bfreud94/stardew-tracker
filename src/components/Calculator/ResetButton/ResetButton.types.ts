@@ -2,8 +2,8 @@ import { CSSProperties } from 'react'
 
 export interface ResetButtonProps {
 	buttonText: string
-	resetFunction: Function
 	functionArgs: any[]
+	resetFunction: Function
 }
 
 export interface ResetButtonStyles {

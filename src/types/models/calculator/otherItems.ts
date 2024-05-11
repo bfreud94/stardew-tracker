@@ -1,0 +1,1 @@
+export type OtherItemData = Record<string, number>

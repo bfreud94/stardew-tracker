@@ -7,9 +7,7 @@ const Calculator: FC = () => {
 	const styles = makeStyles()
 	return (
 		<div style={styles.container}>
-			<div style={styles.fishContainer}>
-				<FishContainer />
-			</div>
+			<FishContainer />
 			<OtherItems />
 		</div>
 	)

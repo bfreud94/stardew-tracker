@@ -1,28 +1,8 @@
-
-export interface Data {
-	season: number
-	birthdays: Array<Person>
-	items: {
-		fish: Record<string, Record<string, number>>
-		gems: Record<string, number>
-		minerals: Record<string, number>
-		geodes: Record<string, number>
-	}
-}
-
-type Birthday = {
-	season: number
-	day: number
-}
-
-type Person = {
-	name: string
-	birthday: Birthday
-}
+import { Data } from '../types'
 
 export const data: Data = {
 	season: 1,
-	birthdays: [
+	villagers: [
 		{
 			name: 'Alex',
 			birthday: {
@@ -85,6 +65,7 @@ export const data: Data = {
 				Gold: 75,
 				Iridium: 100
 			},
+			// change this back
 			'LM Bass': {
 				Normal: 100,
 				Silver: 125,

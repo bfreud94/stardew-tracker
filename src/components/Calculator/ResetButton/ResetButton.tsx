@@ -4,8 +4,8 @@ import { ResetButtonProps } from './ResetButton.types'
 
 const ResetButton: FC<ResetButtonProps> = ({
 	buttonText,
-	resetFunction,
-	functionArgs
+	functionArgs,
+	resetFunction
 }) => {
 	const styles = makeStyles()
 	return (

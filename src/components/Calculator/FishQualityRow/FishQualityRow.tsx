@@ -1,32 +1,35 @@
-import { ChangeEvent, FC } from 'react'
-import { getFishQualityRowText } from '../../../util'
+import { FC } from 'react'
+import { getFishQualityRowText } from '../../../copy'
+import { setFishState } from '../../../state'
+import { Event, QualityName } from '../../../types'
+import { getFishAmount, getFishItemFromData, getFishRowTotal } from '../../../util'
+import ItemWithInput from '../ItemWithInput/ItemWithInput'
 import makeStyles from './FishQualityRow.styles'
 import { FishQualityRowProps } from './FishQualityRow.types'
-import ItemWithInput from '../ItemWithInput/ItemWithInput'
 
 const FishQualityRow: FC<FishQualityRowProps> = ({
-	fishItem,
 	fishName,
 	fishState,
 	quality,
-	setFishState
+	setState
 }) => {
 	const styles = makeStyles()
-	const fishAmount = fishState[fishName][quality]
-	const fishItemValue = fishItem[quality]
-	const total = fishAmount * fishItemValue
-	const { fishNameAndQuality, multiplier, textRightOfInput } = getFishQualityRowText(fishName, fishItemValue, quality, total)
+	const fishAmount = getFishAmount(fishState, fishName, quality)
+	const fishItem = getFishItemFromData(fishName)
+
+	if (fishItem === null) {
+		return null
+	}
+
+	const fishItemQuality = fishItem[quality as QualityName]
+	const total = getFishRowTotal(fishAmount, fishItemQuality)
+	const { fishNameAndQuality, multiplier, textRightOfInput } = getFishQualityRowText(fishName, fishItemQuality, quality, total)
+
 	return (
 		<div key={quality} style={styles.fishQualityRow}>
-			<ItemWithInput itemName={fishNameAndQuality} costAndMultiplier={multiplier} ellipsesAndTotal={textRightOfInput} onChange={(e: ChangeEvent<HTMLInputElement>) => {
-				setFishState({
-					...fishState,
-					[fishName]: {
-						...fishState[fishName],
-						[quality]: e.target.value
-					}
-				})
-			}} value={fishAmount} />
+			<ItemWithInput itemName={fishNameAndQuality} costAndMultiplier={multiplier}
+				ellipsesAndTotal={textRightOfInput} onChange={(e: Event) => setFishState(e, fishName, quality, setState)}
+				value={fishAmount} />
 		</div>
 	)
 }

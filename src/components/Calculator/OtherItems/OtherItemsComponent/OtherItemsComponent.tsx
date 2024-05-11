@@ -1,10 +1,11 @@
 import { ChangeEvent, FC } from 'react'
-import { data } from '../../../../api'
-import { getEllipses } from '../../../../util'
+import { getOtherItem } from '../../../../util'
 import ItemWithInput from '../../ItemWithInput/ItemWithInput'
-import makeStyles from './OtherItemsComponent.styles'
 import { OtherItemsComponentProps } from './OtherItemsComponent.types'
 import OtherItemHeader from '../OtherItemHeader/OtherItemHeader'
+import { getOtherItemCopy } from '../../../../copy/calculator'
+import makeStyles from './OtherItemsComponent.styles'
+import { OtherItemsState } from '../OtherItems.types' 
 
 const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 	itemName,
@@ -12,27 +13,29 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 	setState
 }) => {
 	const styles = makeStyles()
-	const item = data.items[itemName as keyof typeof data.items]
+	const itemData = getOtherItem(itemName)
+	if (!itemData) {
+		return null
+	}
 	return (
 		<div style={styles.otherItemComponent}>
 			<OtherItemHeader item={itemName} state={state} setState={setState} />
-			{Object.keys(item).map((subItemName: any) => {
-				const items = state[itemName as keyof typeof state]
-				const value = items[subItemName as keyof typeof items]
-				const total = parseInt(String(value)) * parseInt(String(item[subItemName]))
-				const ellipsesAndTotal = `${getEllipses(total)} ${total}`
-				const costAndMultiplier = `${item[subItemName]} x`
+			{Object.keys(itemData).map((subItemName: string) => {
+				const { costAndMultiplier, ellipsesAndTotal, subItemValue } = getOtherItemCopy(itemName, itemData, state, subItemName)
 				return (
 					<div key={subItemName} style={styles.inputContainer}>
 						<ItemWithInput itemName={subItemName} costAndMultiplier={costAndMultiplier} ellipsesAndTotal={ellipsesAndTotal} onChange={(e: ChangeEvent<HTMLInputElement>) => {
-							setState({
-								...state,
-								[itemName]: {
-									...items,
-									[subItemName]: e.target.value
+							setState((prevState: OtherItemsState) => {
+								const prevItems = prevState[itemName]
+								return {
+									...prevState,
+									[itemName]: {
+										...prevItems,
+										[subItemName]: e.target.value
+									}
 								}
 							})
-						}} value={String(value)} />
+						}} value={subItemValue} />
 					</div>
 				)
 			})}

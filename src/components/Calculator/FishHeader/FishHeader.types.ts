@@ -1,8 +1,9 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
+import { SetFishStateAction } from '../../../types'
 
 export interface FishHeaderProps {
 	grandTotal: number
-	setFishState: Dispatch<SetStateAction<Record<string, any>>>
+	setFishState: SetFishStateAction
 }
 
 export interface FishHeaderStyles {

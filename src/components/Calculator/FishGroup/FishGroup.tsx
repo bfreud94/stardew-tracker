@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { data } from '../../../api/index'
-import { getTotalForFish } from '../../../util'
+import { getFishItemFromData } from '../../../util'
 import FishGroupHeader from '../FishGroupHeader/FishGroupHeader'
 import FishQualityRow from '../FishQualityRow/FishQualityRow'
 import makeStyles from './FishGroup.styles'
@@ -12,15 +11,21 @@ const FishGroup: FC<FishGroupProps> = ({
 	setFishState
 }) => {
 	const styles = makeStyles()
-	const fishItem = data.items.fish[fishName]
-	const fishItemQualityComponents = Object.keys(fishItem).map((quality) => (
-		<FishQualityRow key={quality} fishItem={fishItem} fishName={fishName} fishState={fishState} quality={quality} setFishState={setFishState} />
+	const fishItem = getFishItemFromData(fishName)
+
+	if (fishItem === null) {
+		return null
+	}
+
+	const fishItemQualityRows = Object.keys(fishItem).map((quality: string) => (
+		<FishQualityRow key={quality} fishName={fishName} fishState={fishState} quality={quality} setState={setFishState} />
 	))
+
 	return (
 		<div style={styles.fishGroup}>
-			<FishGroupHeader fishItem={fishItem} fishName={fishName} fishState={fishState} setFishState={setFishState} />
+			<FishGroupHeader fishItem={fishItem} fishName={fishName} fishState={fishState} setState={setFishState} />
 			<div key={fishName}>
-				{fishItemQualityComponents}
+				{fishItemQualityRows}
 			</div>
 		</div>
 	)

@@ -1,7 +1,6 @@
-import { Dispatch, SetStateAction } from 'react'
-import { OtherItemsState } from '../OtherItems.types'
+import { SetOtherItemsState } from '../../../../types'
 
 export interface OtherItemsHeaderProps {
-	setState: Dispatch<SetStateAction<OtherItemsState>>
+	setState: SetOtherItemsState
 	total: number
 }

@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { createFishState } from '../../../util/index'
-import { data } from '../../../api'
+import { createFishState } from '../../../state'
 import ResetButton from '../ResetButton/ResetButton'
 import makeStyles from './FishHeader.styles'
 import { FishHeaderProps } from './FishHeader.types'

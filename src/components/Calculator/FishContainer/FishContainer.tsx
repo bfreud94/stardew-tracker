@@ -1,23 +1,24 @@
 import { FC, useState } from 'react'
-import { data } from '../../../api/index'
-import FishHeader from '../FishHeader/FishHeader'
-import { createFishState, getGrandTotal } from '../../../util/index'
-import makeStyles from './FishContainer.styles'
+import { createFishState } from '../../../state'
+import { FishState } from '../../../types'
+import { getGrandTotal } from '../../../util'
 import FishGroup from '../FishGroup/FishGroup'
+import FishHeader from '../FishHeader/FishHeader'
+import makeStyles from './FishContainer.styles'
 
 const FishContainer: FC = () => {
-	const [fishState, setFishState] = useState(createFishState())
+	const [fishState, setFishState] = useState<FishState>(createFishState())
 	const grandTotal = getGrandTotal(fishState)
 	const styles = makeStyles()
 	return (
-		<>
+		<div style={styles.fishContainer}>
 			<FishHeader grandTotal={grandTotal} setFishState={setFishState} />
 			<div style={styles.fishNameContainer}>
-				{Object.keys(data.items.fish).map((fishName) => 
+				{Object.keys(fishState).map((fishName: string) =>
 					<FishGroup key={fishName} fishName={fishName} fishState={fishState} setFishState={setFishState} />
 				)}
 			</div>
-		</>
+		</div>
 	)
 
 }

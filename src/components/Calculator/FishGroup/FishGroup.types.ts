@@ -1,9 +1,10 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
+import { FishState, SetFishStateAction } from '../../../types'
 
 export interface FishGroupProps {
 	fishName: string
-	fishState: Record<string, any>
-	setFishState: Dispatch<SetStateAction<Record<string, any>>>
+	fishState: FishState
+	setFishState: SetFishStateAction
 }
 
 export interface FishGroupStyles {

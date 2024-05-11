@@ -7,7 +7,7 @@ import { CalendarDayProps } from './CalendarDay.types'
 
 const CalendarDay: FC<CalendarDayProps> = ({ day }) => {
     const styles = makeStyles()
-    const birthday = getBirthday(day, data.birthdays)
+    const villager = getBirthday(day, data.villagers)
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => {
@@ -16,14 +16,10 @@ const CalendarDay: FC<CalendarDayProps> = ({ day }) => {
 		}
 	}
 
-    const handleClose = () => {
-        setOpen(false)
-    }
-
     return (
         <div style={styles.day} onClick={handleOpen}>
             <p style={styles.dayNumber}>{day}</p>
-			<NoteModal birthday={birthday} open={open} handleClose={handleClose} />
+			<NoteModal day={day} villager={villager} open={open} setOpen={setOpen} />
         </div>
     )
 }

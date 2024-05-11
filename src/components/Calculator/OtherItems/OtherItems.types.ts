@@ -1,7 +1,9 @@
 export interface OtherItemsState {
-	gems: Item
-	minerals: Item
-	geodes: Item
+	gems: SubItems
+	minerals: SubItems
+	geodes: SubItems
+	[itemName: string]: SubItems
+	// delete that^^
 }
 
-type Item = Record<string, Record<string, number>>
+export type SubItems = Record<string, string>

@@ -1,9 +1,10 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, Dispatch, SetStateAction } from 'react'
 
 export interface NoteModalProps {
-	birthday: string
+	day: number
+	villager: string
 	open: boolean
-	handleClose: () => void
+	setOpen: Dispatch<SetStateAction<boolean>>
 }
 
 export interface NoteModalStyles {

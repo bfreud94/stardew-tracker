@@ -1,11 +1,11 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
+import { FishState, SetFishStateAction } from '../../../types'
 
 export interface FishQualityRowProps {
-	fishItem: Record<string, any>
 	fishName: string
+	fishState: FishState
 	quality: string
-	fishState: Record<string, any>,
-	setFishState: Dispatch<SetStateAction<Record<string, any>>>
+	setState: SetFishStateAction
 }
 
 export interface FishQualityRowStyles {

@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
 import { data } from '../../../api/index'
-import { createOtherItemsState, getTotalForOtherItems } from '../../../util'
+import { getTotalForOtherItems } from '../../../util'
 import OtherItemsHeader from './OtherItemsHeader/OtherItemsHeader'
 import OtherItemComponent from './OtherItemsComponent/OtherItemsComponent'
 import { OtherItemsState } from './OtherItems.types'
+import { createOtherItemsState } from '../../../state'
 
 const OtherItems: FC = () => {
 	const [otherItemsState, setOtherItemsState] = useState<OtherItemsState>({
