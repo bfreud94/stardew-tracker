@@ -1,3 +1,9 @@
+import { CSSProperties } from 'react'
+
+export interface OtherItemStyles {
+	otherItemContainer: CSSProperties
+}
+
 export interface OtherItemsState {
 	gems: SubItems
 	minerals: SubItems

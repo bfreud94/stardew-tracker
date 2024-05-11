@@ -50,10 +50,6 @@ const getNoteForDay = (day: number, notes: string) => {
 
 /*
 TODO
-- Fix inline styling
-- Fix typing
-	- Remove as typeof keyof's
-	- Remove [item: string]
 - Add local storage to save notes
 Structure should look like
 {
