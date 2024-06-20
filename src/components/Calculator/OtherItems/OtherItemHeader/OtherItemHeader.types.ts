@@ -1,11 +1,11 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
 import { OtherItemsState } from '../OtherItems.types'
-import { SetOtherItemsState } from '../../../../types'
+import { SetOtherItemsStateAction } from '../../../../types'
 
 export interface OtherItemHeaderProps {
 	item: string
 	state: OtherItemsState
-	setState: SetOtherItemsState
+	setState: SetOtherItemsStateAction
 }
 
 export interface OtherItemHeaderStyles {

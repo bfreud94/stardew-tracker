@@ -1,13 +1,13 @@
-import { FC, useCallback, useState } from 'react'
-import { data } from '../../../api/index'
-import { getBirthday } from '../../../util'
+import { FC, useState } from 'react'
 import NoteModal from '../NoteModal/NoteModal'
 import makeStyles from './CalendarDay.styles'
 import { CalendarDayProps } from './CalendarDay.types'
 
-const CalendarDay: FC<CalendarDayProps> = ({ day }) => {
+const CalendarDay: FC<CalendarDayProps> = ({
+	day,
+	season
+}) => {
     const styles = makeStyles()
-    const villager = getBirthday(day, data.villagers)
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => {
@@ -19,7 +19,7 @@ const CalendarDay: FC<CalendarDayProps> = ({ day }) => {
     return (
         <div style={styles.day} onClick={handleOpen}>
             <p style={styles.dayNumber}>{day}</p>
-			<NoteModal day={day} villager={villager} open={open} setOpen={setOpen} />
+			<NoteModal day={day} open={open} season={season} setOpen={setOpen} />
         </div>
     )
 }

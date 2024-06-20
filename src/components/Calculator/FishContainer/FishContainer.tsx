@@ -1,14 +1,15 @@
-import { FC, useState } from 'react'
-import { createFishState } from '../../../state'
-import { FishState } from '../../../types'
-import { getGrandTotal } from '../../../util'
+import { FC } from 'react'
+import { getFishGrandTotal } from '../../../util'
 import FishGroup from '../FishGroup/FishGroup'
 import FishHeader from '../FishHeader/FishHeader'
 import makeStyles from './FishContainer.styles'
+import { FishContainerProps } from './FishContainer.types'
 
-const FishContainer: FC = () => {
-	const [fishState, setFishState] = useState<FishState>(createFishState())
-	const grandTotal = getGrandTotal(fishState)
+const FishContainer: FC<FishContainerProps> = ({
+	fishState,
+	setFishState
+}) => {
+	const grandTotal = getFishGrandTotal(fishState)
 	const styles = makeStyles()
 	return (
 		<div style={styles.fishContainer}>

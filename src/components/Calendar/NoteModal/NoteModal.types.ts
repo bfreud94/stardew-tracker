@@ -2,8 +2,8 @@ import { CSSProperties, Dispatch, SetStateAction } from 'react'
 
 export interface NoteModalProps {
 	day: number
-	villager: string
 	open: boolean
+	season: string
 	setOpen: Dispatch<SetStateAction<boolean>>
 }
 

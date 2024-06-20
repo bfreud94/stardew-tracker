@@ -1,3 +1,3 @@
-export * from './calendar/calendar'
 export * from './calculator'
+export * from './calendar'
 export * from './header'

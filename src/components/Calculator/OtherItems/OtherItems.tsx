@@ -1,20 +1,16 @@
-import { FC, useState } from 'react'
-import { data } from '../../../api'
-import { createOtherItemsState } from '../../../state'
-import { getTotalForOtherItems } from '../../../util'
+import { FC } from 'react'
+import { getOtherItemsGrandTotal } from '../../../util'
 import OtherItemsHeader from './OtherItemsHeader/OtherItemsHeader'
 import OtherItemComponent from './OtherItemsComponent/OtherItemsComponent'
 import makeStyles from './OtherItems.styles'
-import { OtherItemsState } from './OtherItems.types'
+import { OtherItemsProps } from './OtherItems.types'
 
-const OtherItems: FC = () => {
-	const [otherItemsState, setOtherItemsState] = useState<OtherItemsState>({
-		gems: createOtherItemsState(data.items.gems),
-		minerals: createOtherItemsState(data.items.minerals),
-		geodes: createOtherItemsState(data.items.geodes)
-	})
+const OtherItems: FC<OtherItemsProps> = ({
+	otherItemsState,
+	setOtherItemsState
+}) => {
 	const styles = makeStyles()
-	const total = getTotalForOtherItems(otherItemsState)
+	const total = getOtherItemsGrandTotal(otherItemsState)
 	return (
 		<>
 			<OtherItemsHeader total={total} setState={setOtherItemsState} />

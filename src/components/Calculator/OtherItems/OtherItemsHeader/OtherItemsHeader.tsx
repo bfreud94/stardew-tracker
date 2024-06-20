@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import ResetButton from '../../ResetButton/ResetButton'
-import { resetEntireState } from '../../../../state'
+import { resetEntireOtherItemsState } from '../../../../state'
 import { OtherItemsHeaderProps } from './OtherItemsHeader.types'
 
 const OtherItemsHeader: FC<OtherItemsHeaderProps> = ({
@@ -9,7 +9,7 @@ const OtherItemsHeader: FC<OtherItemsHeaderProps> = ({
 }) => (
 	<h3>
 		Other Items {total}
-		<ResetButton buttonText='Reset All Other Items' resetFunction={resetEntireState} functionArgs={[setState]} />
+		<ResetButton buttonText='Reset All Other Items' resetFunction={resetEntireOtherItemsState} functionArgs={[setState]} />
 	</h3>
 )
 

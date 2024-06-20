@@ -1,6 +1,6 @@
-import { SetOtherItemsState } from '../../../../types'
+import { SetOtherItemsStateAction } from '../../../../types'
 
 export interface OtherItemsHeaderProps {
-	setState: SetOtherItemsState
+	setState: SetOtherItemsStateAction
 	total: number
 }

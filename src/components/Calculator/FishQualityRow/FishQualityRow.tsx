@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { ChangeEvent, FC } from 'react'
 import { getFishQualityRowText } from '../../../copy'
 import { setFishState } from '../../../state'
-import { Event, QualityName } from '../../../types'
+import { QualityName } from '../../../types'
 import { getFishAmount, getFishItemFromData, getFishRowTotal } from '../../../util'
 import ItemWithInput from '../ItemWithInput/ItemWithInput'
 import makeStyles from './FishQualityRow.styles'
@@ -28,7 +28,7 @@ const FishQualityRow: FC<FishQualityRowProps> = ({
 	return (
 		<div key={quality} style={styles.fishQualityRow}>
 			<ItemWithInput itemName={fishNameAndQuality} costAndMultiplier={multiplier}
-				ellipsesAndTotal={textRightOfInput} onChange={(e: Event) => setFishState(e, fishName, quality, setState)}
+				ellipsesAndTotal={textRightOfInput} onChange={(e: ChangeEvent<HTMLInputElement>) => setFishState(e, fishName, quality, setState)}
 				value={fishAmount} />
 		</div>
 	)

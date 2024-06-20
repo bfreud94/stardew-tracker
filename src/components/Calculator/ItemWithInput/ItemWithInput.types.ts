@@ -1,11 +1,10 @@
-import { CSSProperties } from 'react'
-import { Event } from '../../../types'
+import { ChangeEvent, CSSProperties } from 'react'
 
 export interface ItemWithInputProps {
 	itemName: string
 	costAndMultiplier: string
 	ellipsesAndTotal: string
-	onChange: (e: Event) => void
+	onChange: (e: ChangeEvent<HTMLInputElement>) => void
 	value: string
 }
 

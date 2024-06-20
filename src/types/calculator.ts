@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
+import { OtherItemsState } from '../components/Calculator/OtherItems/OtherItems.types'
 
 export type FishState = {
 	Bream: FishQuality
@@ -27,6 +28,8 @@ export type FishQuality = {
 }
 
 export type SetFishStateAction = Dispatch<SetStateAction<FishState>>
+
+export type SetOtherItemsStateAction = Dispatch<SetStateAction<OtherItemsState>>
 
 export type ItemName = 'fish' | 'gems' | 'minerals' | 'geodes'
 
