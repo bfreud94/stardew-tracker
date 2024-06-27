@@ -13,7 +13,6 @@ const NoteModal: FC<NoteModalProps> = ({
 	setOpen
 }) => {
 	const styles = makeStyles()
-	const images = ['Birthday', 'Stardrop', 'Gold', 'SecretNote', 'Flag']
 	return (
 		<div>
 			<Modal open={open} onClose={() => setOpen(false)}>

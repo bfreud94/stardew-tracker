@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
-import { OtherItemsState } from '../OtherItems.types'
-import { SetOtherItemsStateAction } from '../../../../types'
+import { OtherItemsState, SetOtherItemsStateAction } from '../../../../types'
 
 export interface OtherItemHeaderProps {
 	item: string

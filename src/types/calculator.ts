@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from 'react'
-import { OtherItemsState } from '../components/Calculator/OtherItems/OtherItems.types'
 
 export type FishState = {
 	Bream: FishQuality
@@ -18,8 +17,6 @@ export type Fish = {
 	Iridium: number
 }
 
-// have to sort/rename types
-// this one is part of the fishState
 export type FishQuality = {
 	Normal: string
 	Silver: string
@@ -27,9 +24,20 @@ export type FishQuality = {
 	Iridium: string
 }
 
+export interface OtherItemsState {
+	gems: SubItems
+	minerals: SubItems
+	geodes: SubItems
+	[itemName: string]: SubItems
+}
+
+export type SubItems = Record<string, string>
+
 export type SetFishStateAction = Dispatch<SetStateAction<FishState>>
 
 export type SetOtherItemsStateAction = Dispatch<SetStateAction<OtherItemsState>>
+
+export type SetNoteStateAction = Dispatch<SetStateAction<string>>
 
 export type ItemName = 'fish' | 'gems' | 'minerals' | 'geodes'
 

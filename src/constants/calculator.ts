@@ -1,5 +1,4 @@
-import { FishQuality, FishState } from '../types'
-import { OtherItemsState, SubItems } from '../components/Calculator/OtherItems/OtherItems.types'
+import { FishQuality, FishState, OtherItemsState, SubItems } from '../types'
 
 export const FISH_DEFAULT_INPUT_VALUE = ''
 

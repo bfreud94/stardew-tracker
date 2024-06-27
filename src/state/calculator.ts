@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import { data } from '../api'
 import { DEFAULT_FISH_QUALITY_STATE,
 	DEFAULT_FISH_STATE,
@@ -8,9 +9,7 @@ import { DEFAULT_FISH_QUALITY_STATE,
 } from '../constants'
 import { getFishItemFromData, isValidFishName, isValidFishQuality, isValidOtherItemName } from '../util'
 import { OtherItemData } from '../types/models/calculator'
-import { FishQuality, FishState, SetFishStateAction, OtherItemName, SetOtherItemsStateAction } from '../types'
-import { OtherItemsState, SubItems } from '../components/Calculator/OtherItems/OtherItems.types'
-import { ChangeEvent } from 'react'
+import { FishQuality, FishState, SetFishStateAction, OtherItemName, SetOtherItemsStateAction, SubItems, OtherItemsState } from '../types'
 
 export const createFishState = (): FishState => Object.keys(data.items.fish)
 	.reduce((acc: FishState, fishName: string) => {

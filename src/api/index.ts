@@ -65,7 +65,6 @@ export const data: Data = {
 				Gold: 75,
 				Iridium: 100
 			},
-			// change this back
 			'LM Bass': {
 				Normal: 100,
 				Silver: 125,

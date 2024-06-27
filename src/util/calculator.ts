@@ -1,8 +1,7 @@
 import { data } from '../api'
-import { FishName, FishQuality, FishState, QualityName } from '../types'
-import { ItemName, OtherItemName } from '../types'
-import { OtherItemsState } from '../components/Calculator/OtherItems/OtherItems.types'
 import { OtherItemData } from '../types/models/calculator'
+import { FishName, FishQuality, FishState, OtherItemsState, QualityName } from '../types'
+import { ItemName, OtherItemName } from '../types'
 
 export const getFishGrandTotal = (fishState: FishState) => Object.keys(fishState)
 	.reduce((acc, fishName) => {

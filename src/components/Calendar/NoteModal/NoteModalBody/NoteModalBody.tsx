@@ -1,12 +1,13 @@
 import { FC, useState } from 'react'
 import {
-	getNoteForDay,
+	getNotesForDay,
 	getVillagerFromBirthday,
-	saveNote,
 	villagerHasBirthday
 } from '../../../../util'
 import BirthdaySection from '../BirthdaySection/BirthdaySection'
-import makeStyles from './NoteModalBody.styles'
+import NoteInput from '../NoteInput/NoteInput'
+import SingleNote from '../SingleNote/SingleNote'
+import SubmitNoteButton from '../SubmitNoteButton/SubmitNoteButton'
 import { NoteModalBodyProps } from './NoteModalBody.types'
 
 const NoteModalBody: FC<NoteModalBodyProps> = ({
@@ -15,14 +16,15 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 }) => {
 	const [note, setNote] = useState('')
 	const villager = getVillagerFromBirthday(day)
-	const styles = makeStyles()
-	const savedNote = getNoteForDay(day, season)
+	const savedNotes = getNotesForDay(day, season)
 	return (
 		<>
-			<p>{savedNote}</p>
+			{savedNotes && savedNotes.map((savedNote: string, i: number) => (
+				<SingleNote day={day} key={i} note={savedNote} season={season} setNote={setNote} />
+			))}
 			{villagerHasBirthday(villager) && <BirthdaySection villager={villager} />}
-			<input type='text' placeholder='Enter your note here' style={styles.noteInput} value={note} onChange={(e) => setNote(e.target.value)} />
-			<button style={styles.noteButton} onClick={() => saveNote(day, note, setNote, season)}>Save</button>
+			<NoteInput note={note} setNote={setNote} />
+			<SubmitNoteButton day={day} note={note} season={season} setNote={setNote} />
 		</>
 	)
 }

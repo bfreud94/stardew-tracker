@@ -1,11 +1,11 @@
 import { ChangeEvent, FC } from 'react'
 import { getOtherItem } from '../../../../util'
 import ItemWithInput from '../../ItemWithInput/ItemWithInput'
-import { OtherItemsComponentProps } from './OtherItemsComponent.types'
 import OtherItemHeader from '../OtherItemHeader/OtherItemHeader'
 import { getOtherItemCopy } from '../../../../copy/calculator'
+import { OtherItemsState } from '../../../../types'
 import makeStyles from './OtherItemsComponent.styles'
-import { OtherItemsState } from '../OtherItems.types' 
+import { OtherItemsComponentProps } from './OtherItemsComponent.types'
 
 const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 	itemName,

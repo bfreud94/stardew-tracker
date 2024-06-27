@@ -5,6 +5,6 @@ export interface AppHeaderProps {
 }
 
 export interface AppHeaderStyles {
-	container: CSSProperties,
+	container: CSSProperties
 	headerElement: CSSProperties
 }

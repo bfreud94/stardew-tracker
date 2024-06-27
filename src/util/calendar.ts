@@ -22,7 +22,7 @@ export const isValidSeasonId = (seasonId: SeasonId): boolean => validSeasonIds.i
 export const getCookieDefaultValue = () => {
 	const COOKIE_NOTES = {
 		'Notes': {
-			Spring: Array.from({ length: 30 }, (_) => (''))
+			Spring: Array.from({ length: 30 }, (_) => [])
 		}
 	}
 	return JSON.stringify(COOKIE_NOTES)
@@ -35,7 +35,7 @@ export const getCookieData = () => {
 
 export const setCookieData = () => localStorage.setItem(COOKIE_ID, getCookieDefaultValue())
 
-export const getNoteForDay = (day: number, season: string) => {
+export const getNotesForDay = (day: number, season: string) => {
 	const data = getCookieData()
 	
 	if (Object.keys(data).length === 0) {
@@ -60,13 +60,28 @@ export const villagerHasBirthday = (villager: Villager): boolean =>
 	villager.birthday.day !== 0 &&
 	villager.birthday.season !== 0
 
-export const saveNote = (day: number, note: string, setNote: Dispatch<SetStateAction<string>>, season: string) => {
+export const saveNote = (day: number, note: string, season: string, setNote: Dispatch<SetStateAction<string>>) => {
+	if (note === '') {
+		return
+	}
 	setNote('')
 	setNotesForDay(day, note, season)
 }
 
 export const setNotesForDay = (day: number, note: string, season: string) => {
 	const data = getCookieData()
-	data['Notes'][season][day - 1] = note
+	data['Notes'][season][day - 1].push(note)
 	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
+}
+
+export const deleteNote = (day: number, note: string, season: string, setNote: Dispatch<SetStateAction<string>>) => {
+	const data = getCookieData()
+	const notes = data['Notes'][season][day - 1]
+	const index = notes.indexOf(note)
+	if (index > -1) {
+		notes.splice(index, 1)
+	}
+	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
+	setNote(' ')
+	setTimeout(() => setNote(''), 0)
 }

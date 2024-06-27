@@ -1,6 +1,6 @@
-import { OtherItemsState } from '../components/Calculator/OtherItems/OtherItems.types'
-import { OtherItemData } from '../types/models/calculator'
 import { formatValue, getTotal } from '../util'
+import { OtherItemData } from '../types/models/calculator'
+import { OtherItemsState } from '../types'
 
 export const getEllipses = (number: number): string => {
 	let ellipses = ' . . . . . . '
