@@ -1,4 +1,6 @@
+import { Season } from '../../../../constants'
+
 export interface NoteModalBodyProps {
 	day: number
-	season: string
+	season: Season
 }

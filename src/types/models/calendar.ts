@@ -1,7 +1,6 @@
 import { FishData, OtherItemData } from './calculator'
 
 export interface Data {
-	season: number
 	villagers: Array<Villager>
 	items: DataItems
 }

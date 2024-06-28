@@ -1,8 +1,9 @@
 import { CSSProperties } from 'react'
+import { Season } from '../../../constants'
 
 export interface CalendarDayProps {
 	day: number
-	season: string
+	season: Season
 }
 
 export interface CalendarDayStyles {

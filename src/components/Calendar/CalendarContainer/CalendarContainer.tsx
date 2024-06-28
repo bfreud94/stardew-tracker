@@ -1,15 +1,17 @@
 import { FC } from 'react'
-import { getCurrentSeason } from '../../../util'
-import Header from '../../Header/Header'
 import Calendar from '../../Calendar/Calendar'
+import CalendarHeader from '../../CalendarHeader/CalendarHeader'
 import makeStyles from './CalendarContainer.styles'
+import { CalendarContainerProps } from './CalendarContainer.types'
 
-const CalendarContainer: FC = () => {
+const CalendarContainer: FC<CalendarContainerProps> = ({
+	season,
+	setSeason
+}) => {
 	const styles = makeStyles()
-	const season = getCurrentSeason()
 	return (
 		<div style={styles.container}>
-			<Header season={season} />
+			<CalendarHeader season={season} setSeason={setSeason} />
 			<Calendar season={season} />
 		</div>
 	)

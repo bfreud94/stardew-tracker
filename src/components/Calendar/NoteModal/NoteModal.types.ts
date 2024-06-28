@@ -1,9 +1,10 @@
 import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { Season } from '../../../constants'
 
 export interface NoteModalProps {
 	day: number
 	open: boolean
-	season: string
+	season: Season
 	setOpen: Dispatch<SetStateAction<boolean>>
 }
 

@@ -1,7 +1,8 @@
 import { CSSProperties } from 'react'
+import { Season } from '../../../constants'
 
 export interface CalendarRowProps {
-	season: string
+	season: Season
 	week: Array<number>
 }
 

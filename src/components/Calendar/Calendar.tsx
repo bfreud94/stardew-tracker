@@ -1,8 +1,8 @@
 
 import { FC } from 'react'
 import makeStyles from './Calendar.styles'
-import CalendarHeader from './CalendarHeader/CalendarHeader'
 import CalendarBody from './CalendarBody/CalendarBody'
+import CalendarWeekHeader from './CalendarHeader/CalendarWeekHeader'
 import { CalendarProps } from './Calendar.types'
 
 const Calendar: FC<CalendarProps> = ({
@@ -11,7 +11,7 @@ const Calendar: FC<CalendarProps> = ({
 	const styles = makeStyles()
 	return (
 		<div style={styles.calendar}>
-			<CalendarHeader />
+			<CalendarWeekHeader />
 			<CalendarBody season={season} />
 		</div>
 	)

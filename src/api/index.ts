@@ -1,7 +1,6 @@
 import { Data } from '../types/models'
 
 export const data: Data = {
-	season: 1,
 	villagers: [
 		{
 			name: 'Alex',

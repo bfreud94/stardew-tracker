@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 
-export interface CalendarHeaderStyles {
+export interface CalendarWeekHeaderStyles {
 	header: CSSProperties
 	row: CSSProperties
 }

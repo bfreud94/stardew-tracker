@@ -1,6 +1,7 @@
+import { SeasonIdMap } from '../types'
 import { Villager } from '../types/models'
 
-export const SEASON_ID_MAP = {
+export const SEASON_ID_MAP: SeasonIdMap = {
 	1: 'Spring',
 	2: 'Summer',
 	3: 'Fall',
@@ -8,6 +9,8 @@ export const SEASON_ID_MAP = {
 }
 
 export type SeasonId = 1 | 2 | 3 | 4
+
+export type Season = 'Spring' | 'Summer' | 'Fall' | 'Winter'
 
 export const validSeasonIds: Array<SeasonId> = [1, 2, 3, 4]
 

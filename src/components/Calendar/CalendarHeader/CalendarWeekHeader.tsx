@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import makeStyles from './CalendarHeader.styles'
+import makeStyles from './CalendarWeekHeader.styles'
 
-const CalendarHeader: FC = () => {
+const CalendarWeekHeader: FC = () => {
 	const styles = makeStyles()
 	const days = ['M', 'T', 'W', 'Th', 'F', 'Sa', 'Su']
 	return (
@@ -15,4 +15,4 @@ const CalendarHeader: FC = () => {
 	)
 }
 
-export default CalendarHeader
+export default CalendarWeekHeader
