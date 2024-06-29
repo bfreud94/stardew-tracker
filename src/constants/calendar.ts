@@ -1,20 +1,8 @@
-import { SeasonIdMap } from '../types'
-import { Villager } from '../types/models'
-
-export const SEASON_ID_MAP: SeasonIdMap = {
-	1: 'Spring',
-	2: 'Summer',
-	3: 'Fall',
-	4: 'Winter'
-}
-
-export type SeasonId = 1 | 2 | 3 | 4
-
-export type Season = 'Spring' | 'Summer' | 'Fall' | 'Winter'
-
-export const validSeasonIds: Array<SeasonId> = [1, 2, 3, 4]
+import { SeasonId, SeasonIdMap, Villager } from '../types'
 
 export const COOKIE_ID = 'SVPWA-Data'
+
+export const DAYS = ['M', 'T', 'W', 'Th', 'F', 'Sa', 'Su']
 
 export const DEFAULT_VILLAGER: Villager = {
 	name: '',
@@ -23,3 +11,12 @@ export const DEFAULT_VILLAGER: Villager = {
 		season: 0
 	}
 }
+
+export const SEASON_ID_MAP: SeasonIdMap = {
+	1: 'Spring',
+	2: 'Summer',
+	3: 'Fall',
+	4: 'Winter'
+}
+
+export const VALID_SEASON_IDS: Array<SeasonId> = [1, 2, 3, 4]

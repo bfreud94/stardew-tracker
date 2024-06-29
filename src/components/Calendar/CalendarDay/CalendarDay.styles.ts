@@ -4,12 +4,12 @@ const makeStyles = (): CalendarDayStyles => ({
 	day: {
 		alignItems: 'center',
         border: '1px solid black',
+		cursor: 'pointer',
 		flex: 1,
 		fontFamily: 'SVFont',
 		fontSize: '32px',
         height: '200px',
         justifyContent: 'center',
-		cursor: 'pointer',
         width: '200px'
 	},
 	dayNumber: {

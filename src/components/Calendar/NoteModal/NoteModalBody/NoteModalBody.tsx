@@ -1,13 +1,13 @@
 import { FC, useState } from 'react'
+import BirthdaySection from '../BirthdaySection/BirthdaySection'
+import NoteInput from '../NoteInput/NoteInput'
+import SingleNote from '../SingleNote/SingleNote'
+import SubmitNoteButton from '../SubmitNoteButton/SubmitNoteButton'
 import {
 	getNotesForDay,
 	getVillagerFromBirthday,
 	villagerHasBirthday
 } from '../../../../util'
-import BirthdaySection from '../BirthdaySection/BirthdaySection'
-import NoteInput from '../NoteInput/NoteInput'
-import SingleNote from '../SingleNote/SingleNote'
-import SubmitNoteButton from '../SubmitNoteButton/SubmitNoteButton'
 import { NoteModalBodyProps } from './NoteModalBody.types'
 
 const NoteModalBody: FC<NoteModalBodyProps> = ({
@@ -15,8 +15,10 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 	season
 }) => {
 	const [note, setNote] = useState('')
+
 	const villager = getVillagerFromBirthday(day)
 	const savedNotes = getNotesForDay(day, season)
+
 	return (
 		<>
 			{savedNotes && savedNotes.map((savedNote: string, i: number) => (

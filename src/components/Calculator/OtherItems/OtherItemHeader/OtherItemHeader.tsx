@@ -1,10 +1,10 @@
 import { FC } from 'react'
 import ResetButton from '../../ResetButton/ResetButton'
-import { getOtherItemSubTotal } from '../../../../util'
+import { getFormattedOtherItem } from '../../../../copy'
 import { resetOtherItemState } from '../../../../state'
-import { getFormattedOtherItem } from '../../../../copy/calculator'
-import { OtherItemHeaderProps } from './OtherItemHeader.types'
+import { getOtherItemSubTotal } from '../../../../util'
 import makeStyles from './OtherItemHeader.styles'
+import { OtherItemHeaderProps } from './OtherItemHeader.types'
 
 const OtherItemHeader: FC<OtherItemHeaderProps> = ({
 	item,

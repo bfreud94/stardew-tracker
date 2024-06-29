@@ -1,6 +1,5 @@
+import { OtherItemData, OtherItemsState } from '../types'
 import { formatValue, getTotal } from '../util'
-import { OtherItemData } from '../types/models/calculator'
-import { OtherItemsState } from '../types'
 
 export const getEllipses = (number: number): string => {
 	let ellipses = ' . . . . . . '
@@ -28,6 +27,8 @@ export const getFishQualityRowText = (
 	}
 }
 
+export const getFormattedOtherItem = (itemName: string): string => itemName.charAt(0).toUpperCase() + itemName.slice(1)
+
 export const getOtherItemCopy = (itemName: string, itemData: OtherItemData, state: OtherItemsState, subItemName: string) => {
 	const subItems = state[itemName]
 	const subItemValue = subItems[subItemName]
@@ -40,6 +41,4 @@ export const getOtherItemCopy = (itemName: string, itemData: OtherItemData, stat
 		ellipsesAndTotal,
 		subItemValue
 	}
-} 
-
-export const getFormattedOtherItem = (itemName: string): string => itemName.charAt(0).toUpperCase() + itemName.slice(1)
+}

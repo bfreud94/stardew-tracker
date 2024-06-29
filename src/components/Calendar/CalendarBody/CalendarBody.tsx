@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { createMonthWithWeeks } from '../../../util'
 import CalendarRow from '../CalendarRow/CalendarRow'
+import { createMonthWithWeeks } from '../../../util'
 import { CalendarBodyProps } from './CalendarBody.types'
 
 const CalendarBody: FC<CalendarBodyProps> = ({

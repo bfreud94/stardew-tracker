@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react'
 import AppHeader from './components/AppHeader/AppHeader'
-import { getCookieData, setCookieData } from './util'
-import { Season } from './constants'
-import CalendarContainer from './components/Calendar/CalendarContainer/CalendarContainer'
 import Calculator from './components/Calculator/Calculator'
+import CalendarContainer from './components/Calendar/CalendarContainer/CalendarContainer'
+import { Season } from './types'
+import { getCookieData, setCookieData } from './util'
 
 const App: FC = () => {
 	const [activeComponent, setActiveComponent] = useState<string>('Calendar')

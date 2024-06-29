@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
-import { Season } from '../../../constants'
-import { SetSeasonStateAction } from '../../../types'
+import { Season, SetSeasonStateAction } from '../../../types'
 
 export interface CalendarContainerProps {
 	season: Season

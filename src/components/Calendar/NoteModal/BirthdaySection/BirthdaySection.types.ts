@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import { Villager } from '../../../../types/models'
+import { Villager } from '../../../../types'
 
 export interface BirthdaySectionProps {
 	villager: Villager

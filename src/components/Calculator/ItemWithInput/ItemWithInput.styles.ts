@@ -1,11 +1,11 @@
 import { ItemWithInputStyles } from './ItemWithInput.types'
 
 const makeStyles = (): ItemWithInputStyles => ({
-	itemName: {
-		width: '205px'
-	},
 	costAndMultiplier: {
 		width: '75px'
+	},
+	ellipsesAndTotal: {
+		width: '130px'
 	},
 	inputAmount: {
 		border: '1px solid #ccc',
@@ -15,8 +15,8 @@ const makeStyles = (): ItemWithInputStyles => ({
 		padding: '10px',
 		width: '50px'
 	},
-	ellipsesAndTotal: {
-		width: '130px'
+	itemName: {
+		width: '205px'
 	}
 })
 

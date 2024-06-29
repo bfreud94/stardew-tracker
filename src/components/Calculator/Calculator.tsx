@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
+import CalculatorHeader from './CalculatorHeader/CalculatorHeader'
+import FishContainer from './FishContainer/FishContainer'
+import OtherItems from './OtherItems/OtherItems'
 import { data } from '../../api'
 import { createFishState, createOtherItemsState } from '../../state'
-import FishContainer from './FishContainer/FishContainer'
-import CalculatorHeader from './CalculatorHeader/CalculatorHeader'
-import OtherItems from './OtherItems/OtherItems'
 import { FishState, OtherItemsState } from '../../types'
 import { getFishGrandTotal, getOtherItemsGrandTotal } from '../../util'
 import makeStyles from './Calculator.styles'
@@ -15,9 +15,12 @@ const Calculator: FC = () => {
 		minerals: createOtherItemsState(data.items.minerals),
 		geodes: createOtherItemsState(data.items.geodes)
 	})
+
 	const styles = makeStyles()
+
 	const fishTotal = getFishGrandTotal(fishState)
 	const otherItemsTotal = getOtherItemsGrandTotal(otherItemsState)
+
 	return (
 		<div style={styles.container}>
 			<CalculatorHeader fishTotal={fishTotal} otherItemsTotal={otherItemsTotal} setFishState={setFishState} setOtherItemsState={setOtherItemsState} />

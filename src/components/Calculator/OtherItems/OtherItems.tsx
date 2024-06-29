@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { getOtherItemsGrandTotal } from '../../../util'
-import OtherItemsHeader from './OtherItemsHeader/OtherItemsHeader'
 import OtherItemComponent from './OtherItemsComponent/OtherItemsComponent'
+import OtherItemsHeader from './OtherItemsHeader/OtherItemsHeader'
+import { getOtherItemsGrandTotal } from '../../../util'
 import makeStyles from './OtherItems.styles'
 import { OtherItemsProps } from './OtherItems.types'
 

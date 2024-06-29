@@ -1,9 +1,9 @@
 import { ChangeEvent, FC } from 'react'
+import ItemWithInput from '../ItemWithInput/ItemWithInput'
 import { getFishQualityRowText } from '../../../copy'
 import { setFishState } from '../../../state'
-import { QualityName } from '../../../types'
 import { getFishAmount, getFishItemFromData, getFishRowTotal } from '../../../util'
-import ItemWithInput from '../ItemWithInput/ItemWithInput'
+import { QualityName } from '../../../types'
 import makeStyles from './FishQualityRow.styles'
 import { FishQualityRowProps } from './FishQualityRow.types'
 

@@ -1,6 +1,5 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
-import { Season } from '../../../../constants'
-import { SetNoteStateAction } from '../../../../types'
+import { CSSProperties } from 'react'
+import { Season, SetNoteStateAction } from '../../../../types'
 
 export interface SingleNoteProps {
 	day: number

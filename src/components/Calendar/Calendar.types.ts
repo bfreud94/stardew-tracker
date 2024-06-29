@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import { Season } from '../../constants'
+import { Season } from '../../types'
 
 export interface CalendarProps {
 	season: Season

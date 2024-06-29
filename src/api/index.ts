@@ -1,4 +1,4 @@
-import { Data } from '../types/models'
+import { Data } from '../types'
 
 export const data: Data = {
 	villagers: [

@@ -1,7 +1,7 @@
 import { FC } from 'react'
-import { getFishItemFromData } from '../../../util'
 import FishGroupHeader from '../FishGroupHeader/FishGroupHeader'
 import FishQualityRow from '../FishQualityRow/FishQualityRow'
+import { getFishItemFromData } from '../../../util'
 import makeStyles from './FishGroup.styles'
 import { FishGroupProps } from './FishGroup.types'
 

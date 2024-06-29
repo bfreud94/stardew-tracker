@@ -3,8 +3,7 @@ import {
 	ArrowBack as ArrowBackIcon,
 	ArrowForward as ArrowForwardIcon
  } from '@mui/icons-material'
- import { changeSeason } from '../../util'
-
+ import { changeSeason } from '../../../util'
 import makeStyles from './CalendarHeader.styles'
 import { CalendarHeaderProps } from './CalendarHeader.types'
 

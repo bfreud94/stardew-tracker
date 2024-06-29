@@ -1,7 +1,7 @@
 import { FC } from 'react'
+import { APP_HEADER_ELEMENTS } from '../../util'
 import makeStyles from './AppHeader.styles'
 import { AppHeaderProps } from './AppHeader.types'
-import { APP_HEADER_ELEMENTS } from '../../util'
 
 const AppHeader: FC<AppHeaderProps> = ({
 	setActiveComponent

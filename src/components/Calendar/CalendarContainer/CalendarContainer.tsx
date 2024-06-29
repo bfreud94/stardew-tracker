@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Calendar from '../../Calendar/Calendar'
-import CalendarHeader from '../../CalendarHeader/CalendarHeader'
+import CalendarHeader from '../CalendarHeader/CalendarHeader'
 import makeStyles from './CalendarContainer.styles'
 import { CalendarContainerProps } from './CalendarContainer.types'
 

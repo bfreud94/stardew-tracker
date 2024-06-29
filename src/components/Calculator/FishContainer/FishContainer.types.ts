@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
 import { FishState, SetFishStateAction } from '../../../types'
 
 export interface FishContainerStyles {

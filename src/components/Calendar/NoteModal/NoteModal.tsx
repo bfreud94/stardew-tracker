@@ -1,8 +1,7 @@
 import { FC } from 'react'
-import Modal from '@mui/material/Modal'
-import Box from '@mui/material/Box'
-import NoteModalHeader from './NoteModalHeader/NoteModalHeader'
+import { Modal, Box } from '@mui/material'
 import NoteModalBody from './NoteModalBody/NoteModalBody'
+import NoteModalHeader from './NoteModalHeader/NoteModalHeader'
 import makeStyles from './NoteModal.styles'
 import { NoteModalProps } from './NoteModal.types'
 

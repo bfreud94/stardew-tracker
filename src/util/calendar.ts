@@ -1,6 +1,14 @@
 import { data } from '../api'
-import { COOKIE_ID, DEFAULT_VILLAGER, SEASON_ID_MAP, Season, SeasonId, validSeasonIds } from '../constants'
-import { Birthday, SetNoteStateAction, SetSeasonStateAction, Villager } from '../types'
+import { COOKIE_ID, DEFAULT_VILLAGER, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
+import { Birthday,
+	CookieData,
+	Notes,
+	Season,
+	SeasonId,
+	SetNoteStateAction,
+	SetSeasonStateAction,
+	Villager
+} from '../types'
 
 export const createMonthWithWeeks = (): Array<Array<number>> => 
 	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (_, j) => 7 * i + j + 1))
@@ -15,20 +23,7 @@ export const getVillagerFromBirthday = (birthdayDay: number): Villager => {
 
 export const hasBirthday = (birthday: Birthday): boolean => birthday.season !== 0 && birthday.day !== 0
 
-export const isValidSeasonId = (seasonId: SeasonId): boolean => validSeasonIds.includes(seasonId)
-
-export type Notes = Array<string>
-
-export type SeasonNotes = Array<Notes>
-
-export type CookieData = {
-	Notes: {
-		Spring: SeasonNotes
-		Summer: SeasonNotes
-		Fall: SeasonNotes
-		Winter: SeasonNotes
-	}
-}
+export const isValidSeasonId = (seasonId: SeasonId): boolean => VALID_SEASON_IDS.includes(seasonId)
 
 export const getCookieDefaultValue = (): string => {
 	const COOKIE_NOTES = {

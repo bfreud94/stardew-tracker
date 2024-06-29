@@ -1,4 +1,18 @@
-import { Dispatch, SetStateAction } from 'react'
+export type Fish = {
+	Normal: number
+	Silver: number
+	Gold: number
+	Iridium: number
+}
+
+export type FishName = 'Bream' | 'Bullhead' | 'Carp' | 'Catfish' | 'Chub' | 'LM Bass' | 'Shad'
+
+export type FishQuality = {
+	Normal: string
+	Silver: string
+	Gold: string
+	Iridium: string
+}
 
 export type FishState = {
 	Bream: FishQuality
@@ -10,19 +24,7 @@ export type FishState = {
 	Shad: FishQuality
 }
 
-export type Fish = {
-	Normal: number
-	Silver: number
-	Gold: number
-	Iridium: number
-}
-
-export type FishQuality = {
-	Normal: string
-	Silver: string
-	Gold: string
-	Iridium: string
-}
+export type ItemName = 'fish' | 'gems' | 'minerals' | 'geodes'
 
 export interface OtherItemsState {
 	gems: SubItems
@@ -31,18 +33,8 @@ export interface OtherItemsState {
 	[itemName: string]: SubItems
 }
 
-export type SubItems = Record<string, string>
-
-export type SetFishStateAction = Dispatch<SetStateAction<FishState>>
-
-export type SetOtherItemsStateAction = Dispatch<SetStateAction<OtherItemsState>>
-
-export type SetNoteStateAction = Dispatch<SetStateAction<string>>
-
-export type ItemName = 'fish' | 'gems' | 'minerals' | 'geodes'
-
-export type FishName = 'Bream' | 'Bullhead' | 'Carp' | 'Catfish' | 'Chub' | 'LM Bass' | 'Shad'
+export type OtherItemName = Exclude<ItemName, 'fish'> | string
 
 export type QualityName = 'Normal' | 'Silver' | 'Gold' | 'Iridium'
 
-export type OtherItemName = Exclude<ItemName, 'fish'> | string
+export type SubItems = Record<string, string>

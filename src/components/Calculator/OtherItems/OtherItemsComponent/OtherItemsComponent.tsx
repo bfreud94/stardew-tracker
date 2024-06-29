@@ -1,9 +1,9 @@
 import { ChangeEvent, FC } from 'react'
-import { getOtherItem } from '../../../../util'
 import ItemWithInput from '../../ItemWithInput/ItemWithInput'
 import OtherItemHeader from '../OtherItemHeader/OtherItemHeader'
-import { getOtherItemCopy } from '../../../../copy/calculator'
+import { getOtherItemCopy } from '../../../../copy'
 import { OtherItemsState } from '../../../../types'
+import { getOtherItem } from '../../../../util'
 import makeStyles from './OtherItemsComponent.styles'
 import { OtherItemsComponentProps } from './OtherItemsComponent.types'
 
@@ -14,9 +14,11 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 }) => {
 	const styles = makeStyles()
 	const itemData = getOtherItem(itemName)
+
 	if (!itemData) {
 		return null
 	}
+
 	return (
 		<div style={styles.otherItemComponent}>
 			<OtherItemHeader item={itemName} state={state} setState={setState} />

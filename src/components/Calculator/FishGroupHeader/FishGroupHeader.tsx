@@ -1,7 +1,7 @@
 import { FC } from 'react'
+import ResetButton from '../ResetButton/ResetButton'
 import { resetFishAmount } from '../../../state'
 import { getTotalForFish } from '../../../util'
-import ResetButton from '../ResetButton/ResetButton'
 import makeStyles from './FishGroupHeader.styles'
 import { FishGroupHeaderProps } from './FishGroupHeader.types'
 

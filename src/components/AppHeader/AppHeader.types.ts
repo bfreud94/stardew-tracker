@@ -1,7 +1,8 @@
-import { CSSProperties, Dispatch, SetStateAction } from 'react'
+import { CSSProperties } from 'react'
+import { SetActiveComponentStateAction } from '../../types/actions'
 
 export interface AppHeaderProps {
-    setActiveComponent: Dispatch<SetStateAction<string>>
+    setActiveComponent: SetActiveComponentStateAction
 }
 
 export interface AppHeaderStyles {

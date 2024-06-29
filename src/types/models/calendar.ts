@@ -1,5 +1,10 @@
 import { FishData, OtherItemData } from './calculator'
 
+type Birthday = {
+	season: number
+	day: number
+}
+
 export interface Data {
 	villagers: Array<Villager>
 	items: DataItems
@@ -11,11 +16,6 @@ type DataItems = {
 	minerals: OtherItemData
 	geodes: OtherItemData
 	[itemName: string]: FishData | OtherItemData
-}
-
-type Birthday = {
-	season: number
-	day: number
 }
 
 export type Villager = {
