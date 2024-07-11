@@ -14,9 +14,9 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
 	const styles = makeStyles()
 	return (
 		<div style={styles.header}>
-			<ArrowBackIcon style={styles.header} onClick={() => changeSeason(season, setSeason)} />
+			<ArrowBackIcon style={styles.header} onClick={() => changeSeason(false, season, setSeason)} />
 			<span>{season}</span>
-			<ArrowForwardIcon style={styles.header} onClick={() => changeSeason(season, setSeason)} />
+			<ArrowForwardIcon style={styles.header} onClick={() => changeSeason(true, season, setSeason)} />
 		</div>
 	)
 }

@@ -1,5 +1,5 @@
 import { data } from '../api'
-import { COOKIE_ID, DEFAULT_VILLAGER, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
+import { COOKIE_ID, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
 import { Birthday,
 	CookieData,
 	Notes,
@@ -26,12 +26,12 @@ export const hasBirthday = (birthday: Birthday): boolean => birthday.season !== 
 export const isValidSeasonId = (seasonId: SeasonId): boolean => VALID_SEASON_IDS.includes(seasonId)
 
 export const getCookieDefaultValue = (): string => {
-	const COOKIE_NOTES = {
-		'Notes': {
-			Spring: Array.from({ length: 30 }, (_) => [])
-		}
-	}
-	return JSON.stringify(COOKIE_NOTES)
+    const COOKIE_NOTES = SEASONS.reduce((acc: CookieData, season: Season) => {
+        acc.Notes[season] = Array.from({ length: 30 }, (_) => [])
+        return acc
+    }, { Notes: {} } as CookieData)
+
+    return JSON.stringify(COOKIE_NOTES)
 }
 
 export const getCookieData = (): CookieData => {
@@ -87,9 +87,12 @@ const getSeasonId = (season: string): SeasonId =>
 		return SEASON_ID_MAP[convertedKey] === season
 	}) || 1) as SeasonId
 
-export const changeSeason = (season: Season, setSeason: SetSeasonStateAction): void => {
+export const changeSeason = (isForward: boolean, season: Season, setSeason: SetSeasonStateAction): void => {
 	const seasonId = getSeasonId(season)
-	const nextSeasonId = (parseInt(seasonId + '') + 1) % 4 || 4
+	const nextSeasonId = getNextSeasonId(isForward, seasonId)
 	const nextSeason = SEASON_ID_MAP[nextSeasonId as SeasonId]
 	setSeason(nextSeason)
 }
+
+export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId) =>
+	isForward ? ((parseInt(seasonId + '') + 1) % 4 || 4) : ((parseInt(seasonId + '') - 1) % 4 || 4)
