@@ -21,8 +21,8 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 
 	return (
 		<>
-			{savedNotes && savedNotes.map((savedNote: string, i: number) => (
-				<SingleNote day={day} key={i} note={savedNote} season={season} setNote={setNote} />
+			{savedNotes && savedNotes.map((savedNote: string, index: number) => (
+				<SingleNote day={day} index={index} key={index} note={savedNote} season={season} setNote={setNote} />
 			))}
 			{villagerHasBirthday(villager) && <BirthdaySection villager={villager} />}
 			<NoteInput note={note} setNote={setNote} />

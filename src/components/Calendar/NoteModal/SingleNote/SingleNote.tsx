@@ -1,11 +1,15 @@
 import { FC } from 'react'
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
-import { deleteNote } from '../../../../util'
+import {
+	Edit as EditIcon,
+	RemoveCircleOutline as RemoveCircleOutlineIcon
+} from '@mui/icons-material'
+import { deleteNote, editNote } from '../../../../util'
 import makeStyles from './SingleNote.styles'
 import { SingleNoteProps } from './SingleNote.types'
 
 const SingleNote: FC<SingleNoteProps> = ({
 	day,
+	index,
 	note,
 	season,
 	setNote
@@ -13,7 +17,8 @@ const SingleNote: FC<SingleNoteProps> = ({
 	const styles = makeStyles()
 	return (
 		<div style={styles.noteContainer}>
-			<RemoveCircleOutlineIcon color='error' sx={styles.noteDeleteIcon} onClick={() => deleteNote(day, note, season, setNote)} />
+			<RemoveCircleOutlineIcon color='error' sx={styles.noteDeleteIcon} onClick={() => deleteNote(day, index, false, season, setNote)} />
+			<EditIcon sx={styles.noteEditIcon} onClick={() => editNote(day, index, note, season, setNote)} />
 			<p style={styles.note}>{note}</p>
 		</div>
 	)

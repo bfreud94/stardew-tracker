@@ -11,6 +11,10 @@ const makeStyles = (): SingleNoteStyles => ({
 	noteDeleteIcon: {
 		cursor: 'pointer',
 		fontSize: '16px'
+	},
+	noteEditIcon: {
+		cursor: 'pointer',
+		fontSize: '16px'
 	}
 })
 

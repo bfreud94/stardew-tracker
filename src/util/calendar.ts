@@ -69,16 +69,32 @@ export const setNotesForDay = (day: number, note: string, season: Season): void 
 	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
 }
 
-export const deleteNote = (day: number, note: string, season: Season, setNote: SetNoteStateAction): void => {
+export const deleteNote = (
+	day: number,
+	index: number,
+	isEditing: boolean,
+	season: Season,
+	setNote: SetNoteStateAction
+): void => {
 	const data = getCookieData()
 	const notes = data['Notes'][season][day - 1]
-	const index = notes.indexOf(note)
-	if (index > -1) {
-		notes.splice(index, 1)
-	}
+	notes.splice(index, 1)
 	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
-	setNote(' ')
-	setTimeout(() => setNote(''), 0)
+	if (!isEditing) {
+		setNote(' ')
+		setTimeout(() => setNote(''), 0)
+	}
+}
+
+export const editNote = (
+	day: number,
+	index: number,
+	note: string,
+	season: Season,
+	setNote: SetNoteStateAction
+): void => {
+	setNote(note)
+	deleteNote(day, index, true, season, setNote)
 }
 
 const getSeasonId = (season: string): SeasonId =>
