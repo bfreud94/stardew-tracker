@@ -1,15 +1,15 @@
 import { FC, useEffect, useState } from 'react'
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import AppHeader from './components/AppHeader/AppHeader'
 import Calculator from './components/Calculator/Calculator'
 import CalendarContainer from './components/Calendar/CalendarContainer/CalendarContainer'
+import UniversalAffinities from './components/UniversalAffinities/UniversalAffinities'
+import VillagerDirectory from './components/VillagerDirectory/VillagerDirectory'
 import { Season } from './types'
 import { getCookieData, setCookieData } from './util'
 
 const App: FC = () => {
-	const [activeComponent, setActiveComponent] = useState<string>('Calendar')
 	const [season, setSeason] = useState<Season>('Spring')
-
-	const isCalendarContainer = activeComponent === 'Calendar'
 
 	useEffect(() => {
 		const cookieData = getCookieData()
@@ -19,14 +19,16 @@ const App: FC = () => {
 	}, [])
 
 	return (
-		<>
-			<AppHeader setActiveComponent={setActiveComponent} />
-			{isCalendarContainer ? (
-				<CalendarContainer season={season} setSeason={setSeason} />
-			) : (
-				<Calculator />
-			)}
-		</>
+		<BrowserRouter>
+			<AppHeader />
+			<Routes>
+				<Route path='/calendar' element={<CalendarContainer season={season} setSeason={setSeason} />} />
+				<Route path='/calculator' element={<Calculator />} />
+				<Route path='/universal-affinities' element={<UniversalAffinities />} />
+				<Route path='/villager-directory' element={<VillagerDirectory />} />
+				<Route path='/' element={<Navigate to='/calendar' replace />} />
+			</Routes>
+		</BrowserRouter>
 	)
 }
 
