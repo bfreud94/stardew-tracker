@@ -3,8 +3,7 @@ import { NoteModalStyles } from './NoteModal.types'
 const makeStyles = (): NoteModalStyles => ({
 	noteModal: {
 		bgcolor: 'background.paper',
-		border: '2px solid #000',
-		boxShadow: '24',
+		border: '1.5px solid #000',
 		height: 600,
 		left: '50%',
 		p: 4,

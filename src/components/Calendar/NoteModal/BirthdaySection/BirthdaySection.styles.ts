@@ -16,12 +16,6 @@ const makeStyles = (): BirthdaySectionStyles => ({
 			backgroundColor: 'transparent'
 		}
 	},
-	affinitiesContainer: {
-		display: 'flex',
-		justifyContent: 'end',
-		maxHeight: '200px',
-		overflowY: 'auto'
-	},
 	birthdaySection: {
 		display: 'flex',
 		justifyContent: 'space-between'
@@ -34,6 +28,9 @@ const makeStyles = (): BirthdaySectionStyles => ({
 	},
 	leftContainer: {
 		display: 'flex'
+	},
+	villagerIcon: {
+		marginLeft: '10px'
 	}
 })
 

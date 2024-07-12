@@ -12,7 +12,6 @@ export interface NoteModalStyles {
 	noteModal: {
 		bgcolor: string
 		border: CSSProperties['border']
-		boxShadow: CSSProperties['boxShadow']
 		height: CSSProperties['height']
 		left: CSSProperties['left']
 		p: number

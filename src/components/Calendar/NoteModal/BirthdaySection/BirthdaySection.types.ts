@@ -9,8 +9,8 @@ export interface BirthdaySectionProps {
 export interface BirthdaySectionStyles {
 	affinitiesButton: CSSProperties
 	affinitiesButtonSx: SxProps
-	affinitiesContainer: CSSProperties
 	birthdaySection: CSSProperties
 	birthdayText: CSSProperties
 	leftContainer: CSSProperties
+	villagerIcon: CSSProperties
 }
