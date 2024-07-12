@@ -24,5 +24,4 @@ const SingleNote: FC<SingleNoteProps> = ({
 	)
 }
 
-
 export default SingleNote

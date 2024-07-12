@@ -16,7 +16,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 }) => {
 	const [note, setNote] = useState('')
 
-	const villager = getVillagerFromBirthday(day)
+	const villager = getVillagerFromBirthday(day, season)
 	const savedNotes = getNotesForDay(day, season)
 
 	return (

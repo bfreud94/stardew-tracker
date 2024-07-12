@@ -13,14 +13,12 @@ const NoteModal: FC<NoteModalProps> = ({
 }) => {
 	const styles = makeStyles()
 	return (
-		<div>
-			<Modal open={open} onClose={() => setOpen(false)}>
-				<Box sx={styles.noteModal}>
-					<NoteModalHeader />
-					<NoteModalBody day={day} season={season} />
-				</Box>
-			</Modal>
-		</div>
+		<Modal open={open} onClose={() => setOpen(false)}>
+			<Box sx={styles.noteModal}>
+				<NoteModalHeader />
+				<NoteModalBody day={day} season={season} />
+			</Box>
+		</Modal>
 	)
 }
 

@@ -9,7 +9,12 @@ export const DEFAULT_VILLAGER: Villager = {
 	birthday: {
 		day: 0,
 		season: 0
-	}
+	},
+	loves: [],
+	likes: [],
+	neutral: [],
+	dislikes: [],
+	hates: []
 }
 
 export const SEASONS: Array<Season> = ['Spring', 'Summer', 'Fall', 'Winter']

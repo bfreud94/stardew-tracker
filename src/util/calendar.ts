@@ -1,6 +1,6 @@
 import { data } from '../api'
 import { COOKIE_ID, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
-import { Birthday,
+import { Affinity, Birthday,
 	CookieData,
 	Notes,
 	Season,
@@ -13,8 +13,10 @@ import { Birthday,
 export const createMonthWithWeeks = (): Array<Array<number>> => 
 	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (_, j) => 7 * i + j + 1))
 
-export const getVillagerFromBirthday = (birthdayDay: number): Villager => {
-	const villager = data.villagers.find((b: Villager) => b.birthday.day === birthdayDay)
+export const getVillagerFromBirthday = (birthdayDay: number, season: Season): Villager => {
+	const villager = data.villagers.find((villager: Villager) =>
+		villager.birthday.day === birthdayDay && villager.birthday.season === getSeasonIdAsNumber(getSeasonId(season))
+	)
 	if (!villager) {
 		return DEFAULT_VILLAGER
 	}
@@ -98,10 +100,14 @@ export const editNote = (
 }
 
 const getSeasonId = (season: string): SeasonId =>
-	(Object.keys(SEASON_ID_MAP).find((key) => {
-		const convertedKey = key as unknown as keyof typeof SEASON_ID_MAP
+	(Object.keys(SEASON_ID_MAP).find((key: string) => {
+		const convertedKey = getConvertedKey(key)
 		return SEASON_ID_MAP[convertedKey] === season
 	}) || 1) as SeasonId
+
+const getConvertedKey = (key: string): keyof typeof SEASON_ID_MAP => key as unknown as keyof typeof SEASON_ID_MAP
+
+const getSeasonIdAsNumber = (seasonId: SeasonId) => parseInt(seasonId + '')
 
 export const changeSeason = (isForward: boolean, season: Season, setSeason: SetSeasonStateAction): void => {
 	const seasonId = getSeasonId(season)
@@ -110,5 +116,9 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 	setSeason(nextSeason)
 }
 
-export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId) =>
-	isForward ? ((parseInt(seasonId + '') + 1) % 4 || 4) : ((parseInt(seasonId + '') - 1) % 4 || 4)
+export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number =>
+	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
+
+export const getAffinityLabel = (affinity: string) => affinity.charAt(0).toUpperCase() + affinity.slice(1)
+
+export const includeLeftMargin = (affinity: Affinity) => affinity !== 'loves'
