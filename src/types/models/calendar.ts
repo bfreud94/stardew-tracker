@@ -20,8 +20,6 @@ type DataItems = {
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
 
-export const AFFINITIES: Array<Affinity> = ['loves', 'likes', 'neutral', 'dislikes', 'hates']
-
 export type Villager = {
 	name: string
 	birthday: Birthday

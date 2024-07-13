@@ -119,6 +119,4 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number =>
 	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
 
-export const getAffinityLabel = (affinity: string) => affinity.charAt(0).toUpperCase() + affinity.slice(1)
-
 export const includeLeftMargin = (affinity: Affinity) => affinity !== 'loves'

@@ -1,4 +1,6 @@
-import { Season, SeasonId, SeasonIdMap, Villager } from '../types'
+import { Affinity, Season, SeasonId, SeasonIdMap, Villager } from '../types'
+
+export const AFFINITIES: Array<Affinity> = ['loves', 'likes', 'neutral', 'dislikes', 'hates']
 
 export const COOKIE_ID = 'SVPWA-Data'
 

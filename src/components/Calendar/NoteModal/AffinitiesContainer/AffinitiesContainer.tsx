@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { AFFINITIES, Affinity } from '../../../../types'
+import { AFFINITIES } from '../../../../constants'
+import { Affinity } from '../../../../types'
 import AffinitiesSection from '../AffinitiesSection/AffinitiesSection'
 import makeStyles from './AffinitiesContainer.styles'
 import { AffinitiesContainerProps } from './AffinitiesContainer.types'
