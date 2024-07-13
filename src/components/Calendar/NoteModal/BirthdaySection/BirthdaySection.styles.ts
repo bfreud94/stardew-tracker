@@ -18,7 +18,8 @@ const makeStyles = (): BirthdaySectionStyles => ({
 	},
 	birthdaySection: {
 		display: 'flex',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		marginTop: '25px'
 	},
 	birthdayText: {
 		alignSelf: 'center',

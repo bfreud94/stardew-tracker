@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
 import ImageComponent from '../../ImageComponent/ImageComponent'
+import NotesSection from '../NotesSection/NotesSection'
 import NoteModal from '../NoteModal/NoteModal'
+import { getVillagerFromBirthday, villagerHasBirthday } from '../../../util'
 import makeStyles from './CalendarDay.styles'
 import { CalendarDayProps } from './CalendarDay.types'
-import { getVillagerFromBirthday, villagerHasBirthday } from '../../../util'
 
 const CalendarDay: FC<CalendarDayProps> = ({
 	day,
@@ -31,6 +32,7 @@ const CalendarDay: FC<CalendarDayProps> = ({
 				<ImageComponent altText={villager.name} fileName={`/villagers/${villager.name}.png`} height='32px' width='32px' />
 			</>
 			}
+			<NotesSection day={day} season={season} />
         </div>
     )
 }
