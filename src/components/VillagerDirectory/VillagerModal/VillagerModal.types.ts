@@ -1,4 +1,5 @@
 import { CSSProperties } from 'react'
+import { SxProps } from '@mui/material'
 import { Villager } from '../../../types'
 import { SetOpenStateAction } from '../../../types'
 
@@ -9,6 +10,9 @@ export interface VillagerModalProps {
 }
 
 export interface VillagerModalStyles {
+	affinitiesButton: CSSProperties
+	affinitiesButtonSx: SxProps
+	affinitiesContainer: CSSProperties
 	villagerBirthday: CSSProperties
 	villagerModal: {
 		bgcolor: string

@@ -118,3 +118,5 @@ export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number 
 	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
 
 export const includeLeftMargin = (affinity: Affinity): boolean => affinity !== 'loves'
+
+export const getAffinitiesButtonText = (showAffinities: boolean) => showAffinities ? 'Hide Affinities' : 'Show Affinities'
