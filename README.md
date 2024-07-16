@@ -14,6 +14,6 @@ The universal affinities page displays how villagers generally feel when given c
 The villager directory page displays information about each villager. Click the villager, and you will see their name, birthday, and affinities
 
 # Technology
-This application is built using React, and deployed to Vercel in a Docker container. There are no network requests that are made. Instead, the data is stored in src/api/index.ts. When developing, I didn't think it was worth while finding a server where I can consume the data, or develop one myself
+This application is built using React, and deployed to Vercel in a Docker container. There are no network requests that are made. Instead, the data is stored in [this file](https://github.com/bfreud94/stardew-tracker/blob/main/src/api/index.ts). When developing, I didn't think it was worth while finding a server where I can consume the data, or develop one myself
 
 Please reach out to me if you have any questions. Thank you for your support!
