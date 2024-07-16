@@ -2,10 +2,9 @@ import { FC, useState } from 'react'
 import { Button, Typography } from '@mui/material'
 import AffinitiesContainer from '../AffinitiesContainer/AffinitiesContainer'
 import ImageComponent from '../../../ImageComponent/ImageComponent'
+import { getAffinitiesButtonText } from '../../../../util'
 import makeStyles from './BirthdaySection.styles'
 import { BirthdaySectionProps } from './BirthdaySection.types'
-
-const getAffinitiesButtonText = (showAffinities: boolean) => showAffinities ? 'Hide Affinities' : 'Show Affinities'
 
 const BirthdaySection: FC<BirthdaySectionProps> = ({
 	villager

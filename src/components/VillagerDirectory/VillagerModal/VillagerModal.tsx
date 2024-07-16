@@ -1,16 +1,18 @@
-import { FC } from 'react'
-import { Box, Modal } from '@mui/material'
+import { FC, useState } from 'react'
+import { Box, Button, Modal } from '@mui/material'
+import AffinitiesContainer from '../../Calendar/NoteModal/AffinitiesContainer/AffinitiesContainer'
 import ImageComponent from '../../ImageComponent/ImageComponent'
 import { SEASON_ID_MAP } from '../../../constants'
+import { getAffinitiesButtonText } from '../../../util'
 import makeStyles from './VillagerModal.styles'
 import { VillagerModalProps } from './VillagerModal.types'
-import AffinitiesContainer from '../../Calendar/NoteModal/AffinitiesContainer/AffinitiesContainer'
 
 const VillagerModal: FC<VillagerModalProps> = ({
 	open,
 	setOpen,
 	villager
 }) => {
+	const [showAffinities, setShowAffinities] = useState(false)
 	const styles = makeStyles()
 	return (
 		<Modal disableAutoFocus open={open} onClose={() => setOpen(false)}>
@@ -31,8 +33,19 @@ const VillagerModal: FC<VillagerModalProps> = ({
 						<p style={styles.zeroMargin}>Day: {villager.birthday.day}</p>
 					</div>
 				</div>
-				<h1>Affinities</h1>
-				<AffinitiesContainer variant='h6' villager={villager} />
+				<div style={styles.affinitiesContainer}>
+					<h1>Affinities</h1>
+					<Button
+						color='primary'
+						disableRipple
+						style={styles.affinitiesButton}
+						sx={styles.affinitiesButtonSx}
+						variant='outlined'
+						onClick={() => setShowAffinities(!showAffinities)}>
+						{getAffinitiesButtonText(showAffinities)}
+					</Button>
+				</div>
+				{showAffinities && <AffinitiesContainer variant='h6' villager={villager} />}
 			</Box>
 		</Modal>
 	)

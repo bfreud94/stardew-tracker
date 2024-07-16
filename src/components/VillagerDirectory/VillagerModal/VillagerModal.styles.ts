@@ -1,6 +1,24 @@
 import { VillagerModalStyles } from './VillagerModal.types'
 
 const makeStyles = (): VillagerModalStyles => ({
+	affinitiesButton: {
+		alignSelf: 'center',
+		borderBlockColor: 'black',
+		color: 'black',
+		fontFamily: 'SVFont',
+		fontSize: '18px',
+		height: '25px',
+		marginLeft: '25px',
+		textAlign: 'center'
+	},
+	affinitiesButtonSx: {
+		'&:hover': {
+			backgroundColor: 'transparent'
+		}
+	},
+	affinitiesContainer: {
+		display: 'flex'
+	},
 	villagerBirthday: {
 		marginBottom: '5px' 
 	},
