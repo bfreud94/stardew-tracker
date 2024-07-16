@@ -10,7 +10,7 @@ export const DEFAULT_VILLAGER: Villager = {
 	name: '',
 	birthday: {
 		day: 0,
-		season: 0
+		season: 1
 	},
 	loves: [],
 	likes: [],

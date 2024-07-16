@@ -7,8 +7,7 @@ const makeStyles = (): AffinitiesSectionStyles => ({
 		marginLeft: includeLeftMargin(affinity) ? '50px' : '0px'
 	}),
 	text: {
-		fontFamily: 'SVFont',
-		fontSize: '18px'
+		fontFamily: 'SVFont'
 	},
 })
 

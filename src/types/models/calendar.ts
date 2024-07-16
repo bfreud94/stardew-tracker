@@ -1,7 +1,8 @@
 import { FishData, OtherItemData } from './calculator'
+import { SeasonId } from '../calendar'
 
 type Birthday = {
-	season: number
+	season: SeasonId
 	day: number
 }
 

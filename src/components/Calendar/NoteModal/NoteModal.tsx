@@ -13,7 +13,7 @@ const NoteModal: FC<NoteModalProps> = ({
 }) => {
 	const styles = makeStyles()
 	return (
-		<Modal open={open} onClose={() => setOpen(false)}>
+		<Modal disableAutoFocus open={open} onClose={() => setOpen(false)}>
 			<Box sx={styles.noteModal}>
 				<NoteModalHeader />
 				<NoteModalBody day={day} season={season} />

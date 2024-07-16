@@ -18,6 +18,6 @@ export type CookieData = {
 }
 
 export type Birthday = {
-	season: number
+	season: SeasonId
 	day: number
 }

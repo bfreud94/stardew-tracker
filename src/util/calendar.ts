@@ -1,6 +1,6 @@
 import { data } from '../api'
 import { COOKIE_ID, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
-import { Affinity, Birthday,
+import { Affinity,
 	CookieData,
 	Notes,
 	Season,
@@ -22,8 +22,6 @@ export const getVillagerFromBirthday = (birthdayDay: number, season: Season): Vi
 	}
 	return villager
 }
-
-export const hasBirthday = (birthday: Birthday): boolean => birthday.season !== 0 && birthday.day !== 0
 
 export const isValidSeasonId = (seasonId: SeasonId): boolean => VALID_SEASON_IDS.includes(seasonId)
 
@@ -54,8 +52,8 @@ export const getNotesForDay = (day: number, season: Season): Notes => {
 }
 
 export const villagerHasBirthday = (villager: Villager): boolean =>
-	villager.birthday.day !== 0 &&
-	villager.birthday.season !== 0
+	villager.birthday.day !== 0 ||
+	villager.birthday.season !== 1
 
 export const saveNote = (day: number, note: string, season: Season, setNote: SetNoteStateAction): void => {
 	if (note === '') {
@@ -119,4 +117,4 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number =>
 	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
 
-export const includeLeftMargin = (affinity: Affinity) => affinity !== 'loves'
+export const includeLeftMargin = (affinity: Affinity): boolean => affinity !== 'loves'

@@ -2,6 +2,7 @@ import { VillagerDirectoryStyles } from './VillagerDirectory.types'
 
 const makeStyles = (): VillagerDirectoryStyles => ({
 	villagerContainer: {
+		cursor: 'pointer',
 		marginBottom: '25px'
 	},
 	villagerDirectoryContainer: {
