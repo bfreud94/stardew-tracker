@@ -1,5 +1,4 @@
 import { CSSProperties } from 'react'
-import { SxProps } from '@mui/material'
 import { Villager } from '../../../types'
 import { SetOpenStateAction } from '../../../types'
 
@@ -10,10 +9,6 @@ export interface VillagerModalProps {
 }
 
 export interface VillagerModalStyles {
-	affinitiesButton: CSSProperties
-	affinitiesButtonSx: SxProps
-	affinitiesContainer: CSSProperties
-	villagerBirthday: CSSProperties
 	villagerModal: {
 		bgcolor: string
 		fontFamily: CSSProperties['fontFamily']
@@ -26,6 +21,4 @@ export interface VillagerModalStyles {
 		transform: CSSProperties['transform']
 		width: CSSProperties['width']
 	}
-	villagerModalHeader: CSSProperties
-	zeroMargin: CSSProperties
 }
