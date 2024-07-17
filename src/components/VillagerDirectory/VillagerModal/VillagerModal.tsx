@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Box, Button, Modal } from '@mui/material'
+import { Box, Modal } from '@mui/material'
 import VillagerAffinitiesContainer from '../VillagerAffinitiesContainer/VillagerAffinitiesContainer'
 import VillagerMetaData from '../VillagerMetaData/VillagerMetaData'
 import makeStyles from './VillagerModal.styles'

@@ -1,14 +1,14 @@
 import { FC, useState } from 'react'
 import { Button } from '@mui/material'
-import { getAffinitiesButtonText } from '../../../util'
 import AffinitiesContainer from '../../Calendar/NoteModal/AffinitiesContainer/AffinitiesContainer'
+import { getAffinitiesButtonText } from '../../../util'
 import makeStyles from './VillagerAffinitiesContainer.styles'
 import { VillagerAffinitiesContainerProps } from './VillagerAffinitiesContainer.types'
 
 const VillagerAffinitiesContainer: FC<VillagerAffinitiesContainerProps> = ({
 	villager
 }) => {
-	const [showAffinities, setShowAffinities] = useState(false)
+	const [showAffinities, setShowAffinities] = useState<boolean>(false)
 	const styles = makeStyles()
 	return (
 		<>
