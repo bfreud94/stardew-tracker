@@ -1,7 +1,7 @@
-import { FishData, OtherItemData } from './calculator'
-import { SeasonId } from '../calendar'
+import { FishData, OtherItemData, Villager } from './'
+import { SeasonId } from '../'
 
-type Birthday = {
+export type Birthday = {
 	season: SeasonId
 	day: number
 }
@@ -9,6 +9,7 @@ type Birthday = {
 export interface Data {
 	villagers: Array<Villager>
 	items: DataItems
+	events: Array<Event>
 }
 
 type DataItems = {
@@ -17,16 +18,4 @@ type DataItems = {
 	minerals: OtherItemData
 	geodes: OtherItemData
 	[itemName: string]: FishData | OtherItemData
-}
-
-export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
-
-export type Villager = {
-	name: string
-	birthday: Birthday
-	loves: Array<string>
-	likes: Array<string>
-	neutral: Array<string>
-	dislikes: Array<string>
-	hates: Array<string>
 }
