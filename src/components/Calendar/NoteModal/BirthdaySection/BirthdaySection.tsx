@@ -9,7 +9,7 @@ import { BirthdaySectionProps } from './BirthdaySection.types'
 const BirthdaySection: FC<BirthdaySectionProps> = ({
 	villager
 }) => {
-	const [showAffinities, setShowAffinities] = useState(false)
+	const [showAffinities, setShowAffinities] = useState<boolean>(false)
 	const styles = makeStyles()
 	return (
 		<>

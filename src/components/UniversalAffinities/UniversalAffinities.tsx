@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { AFFINITIES } from '../../constants'
-import { Affinity } from '../../types'
 import { UNIVERSAL_AFFINITIES } from '../../constants'
+import { Affinity } from '../../types'
 import { getAffinityLabel } from '../../util'
 import makeStyles from './UniversalAffinities.styles'
 

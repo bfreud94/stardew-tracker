@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 import ImageComponent from '../../ImageComponent/ImageComponent'
 import NotesSection from '../NotesSection/NotesSection'
 import NoteModal from '../NoteModal/NoteModal'
-import { getVillagerFromBirthday, villagerHasBirthday } from '../../../util'
+import { getVillagerFromBirthday, toggleCalendarModal, villagerHasBirthday } from '../../../util'
 import makeStyles from './CalendarDay.styles'
 import { CalendarDayProps } from './CalendarDay.types'
 
@@ -11,19 +11,13 @@ const CalendarDay: FC<CalendarDayProps> = ({
 	season
 }) => {
     const styles = makeStyles()
-    const [open, setOpen] = useState(false)
-
-    const handleOpen = () => {
-		if (!open) {
-			setOpen(true)
-		}
-	}
+    const [open, setOpen] = useState<boolean>(false)
 
 	const villager = getVillagerFromBirthday(day, season)
 	const isValidVillager = villagerHasBirthday(villager)
 
     return (
-        <div style={styles.day} onClick={handleOpen}>
+        <div style={styles.day} onClick={() => toggleCalendarModal(open, setOpen)}>
             <p style={styles.dayNumber}>{day}</p>
 			<NoteModal day={day} open={open} season={season} setOpen={setOpen} />
 			{isValidVillager &&

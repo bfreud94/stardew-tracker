@@ -4,21 +4,13 @@ import VillagerModal from './VillagerModal/VillagerModal'
 import { data } from '../../api/index'
 import { DEFAULT_VILLAGER } from '../../constants'
 import { Villager } from '../../types'
+import { toggleVillagerModal } from '../../util'
 import makeStyles from './VillagerDirectory.styles'
 import { VillagerDirectoryProps } from './VillagerDirectory.types'
 
 const VillagerDirectory: FC<VillagerDirectoryProps> = () => {
 	const [currentVillager, setCurrentVillager] = useState<Villager>(DEFAULT_VILLAGER)
-    const [open, setOpen] = useState(false)
-
-    const handleOpen = (villager: Villager) => {
-		if (!open) {
-			setCurrentVillager(villager)
-			setOpen(true)
-		} else {
-			setCurrentVillager(DEFAULT_VILLAGER)
-		}
-	}
+    const [open, setOpen] = useState<boolean>(false)
 
 	const styles = makeStyles()
 	return (
@@ -30,7 +22,7 @@ const VillagerDirectory: FC<VillagerDirectoryProps> = () => {
 						fileName={`/villagers/${villager.name}.png`}
 						height='96px'
 						width='96px'
-						onClick={() => handleOpen(villager)}
+						onClick={() => toggleVillagerModal(open, setCurrentVillager, setOpen, villager)}
 					/>
 					<p style={styles.zeroMargin}>{villager.name}</p>
 				</div>
