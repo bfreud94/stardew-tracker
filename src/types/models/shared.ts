@@ -1,6 +1,12 @@
-import { Birthday } from '../'
+import { SeasonId } from '../'
+
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
+
+export type Birthday = {
+	season: SeasonId
+	day: number
+}
 
 export type Villager = {
 	name: string

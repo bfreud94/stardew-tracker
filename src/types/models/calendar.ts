@@ -1,11 +1,6 @@
 import { FishData, OtherItemData, Villager } from './'
 import { SeasonId } from '../'
 
-export type Birthday = {
-	season: SeasonId
-	day: number
-}
-
 export interface Data {
 	villagers: Array<Villager>
 	items: DataItems
