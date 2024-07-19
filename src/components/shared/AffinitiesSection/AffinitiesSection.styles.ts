@@ -1,5 +1,6 @@
-import { Affinity } from '../../../../types'
-import { includeLeftMargin } from '../../../../util'
+
+import { Affinity } from '../../../types'
+import { includeLeftMargin } from '../../../util'
 import { AffinitiesSectionStyles } from './AffinitiesSection.types'
 
 const makeStyles = (): AffinitiesSectionStyles => ({

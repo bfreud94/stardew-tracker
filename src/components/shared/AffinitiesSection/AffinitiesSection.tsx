@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Typography } from '@mui/material'
-import { getAffinityLabel } from '../../../../util'
+import { getAffinityLabel } from '../../../util'
 import makeStyles from './AffinitiesSection.styles'
 import { AffinitiesSectionProps } from './AffinitiesSection.types'
 

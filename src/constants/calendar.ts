@@ -1,4 +1,11 @@
-import { Affinity, Season, SeasonId, SeasonIdMap, Villager } from '../types'
+import {
+	Affinity,
+	Event,
+	Season,
+	SeasonId,
+	SeasonIdMap,
+	Villager
+} from '../types'
 
 export const AFFINITIES: Array<Affinity> = ['loves', 'likes', 'neutral', 'dislikes', 'hates']
 
@@ -17,6 +24,21 @@ export const DEFAULT_VILLAGER: Villager = {
 	neutral: [],
 	dislikes: [],
 	hates: []
+}
+
+export const DEFAULT_EVENT: Event = {
+	name: '',
+	date: {
+		season: 1,
+		day: 1
+	},
+	location: '',
+	time: {
+		start: '',
+		end: ''
+	},
+	icon: '',
+	notes: []
 }
 
 export const SEASONS: Array<Season> = ['Spring', 'Summer', 'Fall', 'Winter']

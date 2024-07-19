@@ -7,6 +7,9 @@ export interface CalendarDayProps {
 }
 
 export interface CalendarDayStyles {
+	birthday: CSSProperties
 	day: CSSProperties
 	dayNumber: CSSProperties
+	event: CSSProperties
+	imageContainer: CSSProperties
 }

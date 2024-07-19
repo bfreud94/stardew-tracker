@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { Button } from '@mui/material'
-import AffinitiesContainer from '../../Calendar/NoteModal/AffinitiesContainer/AffinitiesContainer'
-import { getAffinitiesButtonText } from '../../../util'
+import AffinitiesContainer from '../../shared/AffinitiesContainer/AffinitiesContainer'
+import { getButtonText } from '../../../util'
 import makeStyles from './VillagerAffinitiesContainer.styles'
 import { VillagerAffinitiesContainerProps } from './VillagerAffinitiesContainer.types'
 
@@ -21,7 +21,7 @@ const VillagerAffinitiesContainer: FC<VillagerAffinitiesContainerProps> = ({
 					sx={styles.affinitiesButtonSx}
 					variant='outlined'
 					onClick={() => setShowAffinities(!showAffinities)}>
-					{getAffinitiesButtonText(showAffinities)}
+					{getButtonText(showAffinities, 'Affinities')}
 				</Button>
 			</div>
 			{showAffinities && <AffinitiesContainer variant='h6' villager={villager} />}

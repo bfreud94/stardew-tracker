@@ -1,6 +1,9 @@
 import { CalendarDayStyles } from './CalendarDay.types'
 
 const makeStyles = (): CalendarDayStyles => ({
+	birthday: {
+		marginLeft: '5px'
+	},
 	day: {
 		alignItems: 'center',
         border: '1px solid black',
@@ -15,6 +18,12 @@ const makeStyles = (): CalendarDayStyles => ({
 	},
 	dayNumber: {
 		margin: '5px 0px 0px 5px'
+	},
+	event: {
+		marginLeft: '5px'
+	},
+	imageContainer: {
+		display: 'flex'
 	}
 })
 
