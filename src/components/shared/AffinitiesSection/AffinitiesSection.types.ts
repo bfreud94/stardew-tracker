@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import { Variant } from '@mui/material/styles/createTypography'
-import { Affinity, Villager } from '../../../../types'
+import { Affinity, Villager } from '../../../types'
 
 export interface AffinitiesSectionProps {
 	affinity: Affinity

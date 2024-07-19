@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 import { Variant } from '@mui/material/styles/createTypography'
-import { Villager } from '../../../../types'
+import { Villager } from '../../../types'
 
 export interface AffinitiesContainerProps {
 	headerVariant?: Variant

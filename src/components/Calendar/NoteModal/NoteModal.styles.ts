@@ -6,6 +6,7 @@ const makeStyles = (): NoteModalStyles => ({
 		border: '1.5px solid #000',
 		height: 600,
 		left: '50%',
+		overflow: 'auto',
 		p: 4,
 		position: 'absolute' as 'absolute',
 		top: '50%',

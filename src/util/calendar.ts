@@ -1,7 +1,8 @@
 import { data } from '../api'
-import { COOKIE_ID, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
+import { COOKIE_ID, DEFAULT_EVENT, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
 import { Affinity,
 	CookieData,
+	Event,
 	Notes,
 	Season,
 	SeasonId,
@@ -20,6 +21,17 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 
 export const createMonthWithWeeks = (): Array<Array<number>> => 
 	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (_, j) => 7 * i + j + 1))
+
+export const dayHasEvent = (day: number, seasonId: SeasonId) => {
+	const event = data.events.find((event: Event) =>
+		event.date.day === day &&
+		getSeasonIdAsNumber(event.date.season) === getSeasonIdAsNumber(seasonId)
+	)
+	if (!event) {
+		return DEFAULT_EVENT
+	}
+	return event
+}
 
 export const deleteNote = (
 	day: number,
@@ -48,8 +60,6 @@ export const editNote = (
 	setNote(note)
 	deleteNote(day, index, true, season, setNote)
 }
-
-export const getAffinitiesButtonText = (showAffinities: boolean) => showAffinities ? 'Hide Affinities' : 'Show Affinities'
 
 const getConvertedKey = (key: string): keyof typeof SEASON_ID_MAP => key as unknown as keyof typeof SEASON_ID_MAP
 
@@ -80,7 +90,7 @@ export const getNotesForDay = (day: number, season: Season): Notes => {
 	return data['Notes'][season][day - 1]
 }
 
-const getSeasonId = (season: string): SeasonId =>
+export const getSeasonId = (season: string): SeasonId =>
 	(Object.keys(SEASON_ID_MAP).find((key: string) => {
 		const convertedKey = getConvertedKey(key)
 		return SEASON_ID_MAP[convertedKey] === season
@@ -101,6 +111,16 @@ export const getVillagerFromBirthday = (birthdayDay: number, season: Season): Vi
 export const includeLeftMargin = (affinity: Affinity): boolean => affinity !== 'loves'
 
 export const isValidSeasonId = (seasonId: SeasonId): boolean => VALID_SEASON_IDS.includes(seasonId)
+
+export const isValidEvent = (event: Event): boolean =>
+	event.name !== '' &&
+	event.location !== '' &&
+	event.time.start !== '' &&
+	event.time.end !== ''
+
+export const isValidVillager = (villager: Villager): boolean =>
+	villager.birthday.day !== 0 ||
+	villager.birthday.season !== 1
 
 export const saveNote = (day: number, note: string, season: Season, setNote: SetNoteStateAction): void => {
 	if (note === '') {
@@ -123,7 +143,3 @@ export const toggleCalendarModal = (open: boolean, setOpen: SetOpenStateAction) 
 		setOpen(true)
 	}
 }
-
-export const villagerHasBirthday = (villager: Villager): boolean =>
-	villager.birthday.day !== 0 ||
-	villager.birthday.season !== 1
