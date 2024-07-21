@@ -463,7 +463,7 @@ export const data: Data = {
 			name: 'Gus',
 			birthday: {
 				season: 2,
-				day: 10
+				day: 8
 			},
 			loves: [
 				'All Universal Loves',
@@ -504,6 +504,67 @@ export const data: Data = {
 				'All Universal Hates',
 				'Coleslaw',
 				'Quartz'
+			]
+		},
+		{
+			name: 'Maru',
+			birthday: {
+				season: 2,
+				day: 10
+			},
+			loves: [
+				'All Universal Loves',
+				'Battery Pack',
+				'Cauliflower',
+				'Cheese Cauliflower',
+				'Diamond',
+				'Dwarf Gadget',
+				'Gold Bar',
+				'Iridium Bar',
+				'Miner\'s Treat',
+				'Pepper Poppers',
+				'Radioactive Bar',
+				'Rhubarb Pie',
+				'Strawberry'
+			],
+			likes: [
+				'All Universal Likes',
+				'Chanterelle',
+				'Copper Bar',
+				'Iron Bar',
+				'Magma Cap',
+				'Morel',
+				'Oak Resin',
+				'Pine Tar',
+				'Purple Mushroom',
+				'Quartz',
+				'Radioactive Ore'
+			],
+			neutral: [
+				'All Universal Neutrals',
+				'Daffodil',
+				'Dandelion',
+				'Ginger',
+				'Hazelnut',
+				'Leek',
+				'Wild Horseradish',
+				'Winter Root'
+			],
+			dislikes: [
+				'All Universal Dislikes',
+				'Blackberry',
+				'Common Mushroom',
+				'Crystal Fruit',
+				'Maple Syrup',
+				'Salmonberry'
+			],
+			hates: [
+				'All Universal Hates',
+				'Holly',
+				'Honey',
+				'Pickles',
+				'Snow Yam',
+				'Truffle'
 			]
 		},
 		{
