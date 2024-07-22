@@ -1,16 +1,10 @@
-import { FamilyMember, SeasonId } from '../'
-
+import { FamilyMember, StardewDate } from '../'
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
 
-export type Birthday = {
-	season: SeasonId
-	day: number
-}
-
 export type Villager = {
 	name: string
-	birthday: Birthday
+	birthday: StardewDate
 	loves: Array<string>
 	likes: Array<string>
 	neutral: Array<string>

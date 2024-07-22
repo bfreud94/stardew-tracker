@@ -10,7 +10,7 @@ const CalendarRow: FC<CalendarRowProps> = ({
 	const styles = makeStyles()
 	return (
 		<div style={styles.row}>
-			{week.map((day, index) => (
+			{week.map((day: number, index: number) => (
 				<CalendarDay key={index} day={day} season={season} />
 			))}
 		</div>
