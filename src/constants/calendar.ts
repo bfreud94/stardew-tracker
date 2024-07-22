@@ -23,7 +23,11 @@ export const DEFAULT_VILLAGER: Villager = {
 	likes: [],
 	neutral: [],
 	dislikes: [],
-	hates: []
+	hates: [],
+	address: '',
+	family: [],
+	loveInterest: '',
+	clinicVisit: ''
 }
 
 export const DEFAULT_EVENT: Event = {

@@ -47,7 +47,20 @@ export const data: Data = {
 				'Holly',
 				'Sashimi',
 				'Tortilla'
-			]
+			],
+			address: '1 Willow Lane',
+			family: [{
+				name: 'Jodi',
+				relationship: 'Wife'
+			}, {
+				name: 'Sam',
+				relationship: 'Son'
+			}, {
+				name: 'Vincent',
+				relationship: 'Son'
+			}],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Lewis',
@@ -96,7 +109,11 @@ export const data: Data = {
 				'All Universal Hates',
 				'Holly',
 				'Quartz'
-			]
+			],
+			address: 'Mayor\'s Manor',
+			family: [],
+			loveInterest: '',
+			clinicVisit: 'Fall 9'
 		},
 		{
 			name: 'Vincent',
@@ -148,7 +165,20 @@ export const data: Data = {
 				'Piña Colada',
 				'Triple Shot Espresso',
 				'Wild Horseradish'
-			]
+			],
+			address: '1 Willow Lane',
+			family: [{
+				name: 'Jodi',
+				relationship: 'Mother'
+			}, {
+				name: 'Kent',
+				relationship: 'Father'
+			}, {
+				name: 'Sam',
+				relationship: 'Brother'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Spring 11'
 		},
 		{
 			name: 'Haley',
@@ -197,7 +227,14 @@ export const data: Data = {
 				'Clay',
 				'Prismatic Shard',
 				'Wild Horseradish'
-			]
+			],
+			address: '2 Willow Lane',
+			family: [{
+				name: 'Emily',
+				relationship: 'Sister'
+			}],
+			loveInterest: 'Alex',
+			clinicVisit: 'Winter 9'
 		},
 		{
 			name: 'Pam',
@@ -249,7 +286,14 @@ export const data: Data = {
 				'Holly',
 				'Octopus',
 				'Squid'
-			]
+			],
+			address: 'Trailer',
+			family: [{
+				name: 'Penny',
+				relationship: 'Daughter'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Spring 25'
 		},
 		{
 			name: 'Shane',
@@ -296,7 +340,17 @@ export const data: Data = {
 				'All Universal Hates',
 				'Pickles',
 				'Quartz'	
-			]
+			],
+			address: 'Marnie\'s Ranch',
+			family: [{
+				name: 'Jas',
+				relationship: 'Goddaughter'
+			}, {
+				name: 'Marnie',
+				relationship: 'Aunt'
+			}],
+			loveInterest: 'Emily',
+			clinicVisit: ''
 		},
 		{
 			name: 'Pierre',
@@ -345,7 +399,17 @@ export const data: Data = {
 				'Garlic',
 				'Parsnip Soup',
 				'Tortilla'
-			]
+			],
+			address: 'Pierre\'s General Store',
+			family: [{
+				name: 'Caroline',
+				relationship: 'Wife'
+			}, {
+				name: 'Abigail',
+				relationship: 'Daughter'
+			}],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Emily',
@@ -404,7 +468,14 @@ export const data: Data = {
 				'Maki Roll',
 				'Salmon Dinner',
 				'Sashimi'
-			]
+			],
+			address: '2 Willow Lane',
+			family: [{
+				name: 'Haley',
+				relationship: 'Sister'
+			}],
+			loveInterest: 'Shane',
+			clinicVisit: 'Winter 11'
 		},
 		{
 			name: 'Jas',
@@ -457,7 +528,17 @@ export const data: Data = {
 				'Piña Colada',
 				'Triple Shot Espresso',
 				'Wild Horseradish'
-			]
+			],
+			address: 'Marnie\'s Ranch',
+			family: [{
+				name: 'Shane',
+				relationship: 'Godfather'
+			}, {
+				name: 'Marnie',
+				relationship: 'Aunt'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Winter 18'
 		},
 		{
 			name: 'Gus',
@@ -504,7 +585,11 @@ export const data: Data = {
 				'All Universal Hates',
 				'Coleslaw',
 				'Quartz'
-			]
+			],
+			address: 'The Stardrop Saloon',
+			family: [],
+			loveInterest: '',
+			clinicVisit: 'Fall 4'
 		},
 		{
 			name: 'Maru',
@@ -565,7 +650,20 @@ export const data: Data = {
 				'Pickles',
 				'Snow Yam',
 				'Truffle'
-			]
+			],
+			address: '24 Mountain Road',
+			family: [{
+				name: 'Robin',
+				relationship: 'Mother'
+			}, {
+				name: 'Demetrius',
+				relationship: 'Father'
+			}, {
+				name: 'Sebastian',
+				relationship: 'Half-Brother'
+			}],
+			loveInterest: 'Harvey',
+			clinicVisit: ''
 		},
 		{
 			name: 'Alex',
@@ -614,7 +712,17 @@ export const data: Data = {
 				'All Universal Hates',
 				'Holly',
 				'Quartz'
-			]
+			],
+			address: '1 River Road',
+			family: [{
+				name: 'George',
+				relationship: 'Grandfather'
+			}, {
+				name: 'Evelyn',
+				relationship: 'Grandmother'
+			}],
+			loveInterest: 'Haley',
+			clinicVisit: 'Summer 16'
 		},
 		{
 			name: 'Sam',
@@ -674,7 +782,20 @@ export const data: Data = {
 				'Mayonnaise',
 				'Pickles',
 				'Refined Quartz'
-			]
+			],
+			address: '1 Willow Lane',
+			family: [{
+				name: 'Jodi',
+				relationship: 'Mother'
+			}, {
+				name: 'Kent',
+				relationship: 'Father'
+			}, {
+				name: 'Vincent',
+				relationship: 'Brother'
+			}],
+			loveInterest: 'Penny',
+			clinicVisit: 'Fall 11'
 		},
 		{
 			name: 'Demetrius',
@@ -720,7 +841,20 @@ export const data: Data = {
 			hates: [
 				'All Universal Hates',
 				'Holly'
-			]
+			],
+			address: '24 Mountain Road',
+			family: [{
+				name: 'Maru',
+				relationship: 'Daughter'
+			}, {
+				name: 'Robin',
+				relationship: 'Wife'
+			}, {
+				name: 'Sebastian',
+				relationship: 'Stepson'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Summer 25'
 		},
 		{
 			name: 'Dwarf',
@@ -772,7 +906,11 @@ export const data: Data = {
 			],
 			hates: [
 				'All Universal Hates'
-			]
+			],
+			address: 'Eastern Cave',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Willy',
@@ -847,7 +985,11 @@ export const data: Data = {
 			],
 			hates: [
 				'All Universal Hates'
-			]
+			],
+			address: 'Fish Shop',
+			family: [],
+			loveInterest: '',
+			clinicVisit: 'Spring 9'
 		},
 		{
 			name: 'Leo',
@@ -911,7 +1053,11 @@ export const data: Data = {
 				'Triple Shot Espresso',
 				'Unmilled Rice',
 				'Wine'
-			]
+			],
+			address: 'Treehouse (Ginger Island)/Hut (Stardew Valley)',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Penny',
@@ -976,7 +1122,14 @@ export const data: Data = {
 				'Piña Colada',
 				'Rabbit\'s Foot',
 				'Wine'
-			]
+			],
+			address: 'Trailer',
+			family: [{
+				name: 'Pam',
+				relationship: 'Mother'
+			}],
+			loveInterest: 'Sam',
+			clinicVisit: 'Winter 4'
 		},
 		{
 			name: 'Elliot',
@@ -1033,7 +1186,11 @@ export const data: Data = {
 				'Salmonberry',
 				'Sea Cucumber',
 				'Super Cucumber'
-			]
+			],
+			address: 'Elliot\'s Cabin',
+			family: [],
+			loveInterest: 'Leah',
+			clinicVisit: 'Summer 9'
 		},
 		{
 			name: 'Jodi',
@@ -1083,7 +1240,20 @@ export const data: Data = {
 				'Daffodil',
 				'Dandelion',
 				'Spice Berry'
-			]
+			],
+			address: '1 Willow Lane',
+			family: [{
+				name: 'Kent',
+				relationship: 'Husband'
+			}, {
+				name: 'Sam',
+				relationship: 'Son'
+			}, {
+				name: 'Vincent',
+				relationship: 'Son'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Spring 11 (with Vincent) & Spring 18'
 		},
 		{
 			name: 'Abigail',
@@ -1140,7 +1310,17 @@ export const data: Data = {
 				'All Universal Hates',
 				'Clay',
 				'Holly'
-			]
+			],
+			address: 'Pierrre\'s General Store',
+			family: [{
+				name: 'Pierre',
+				relationship: 'Father'
+			}, {
+				name: 'Caroline',
+				relationship: 'Mother'
+			}],
+			loveInterest: 'Sebastian',
+			clinicVisit: 'Spring 4'
 		},
 		{
 			name: 'Sandy',
@@ -1187,7 +1367,11 @@ export const data: Data = {
 			hates: [
 				'All Universal Hates',
 				'Holly'
-			]
+			],
+			address: 'Oasis',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Marnie',
@@ -1235,7 +1419,17 @@ export const data: Data = {
 				'All Universal Hates',
 				'Clay',
 				'Holly'
-			]
+			],
+			address: 'Marnie\'s Ranch',
+			family: [{
+				name: 'Jas',
+				relationship: 'Goddaughter'
+			}, {
+				name: 'Shane',
+				relationship: 'Nephew'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Fall 18 & Winter 18 (with Jas)'
 		},
 		{
 			name: 'Robin',
@@ -1281,7 +1475,20 @@ export const data: Data = {
 			hates: [
 				'All Universal Hates',
 				'Holly'
-			]
+			],
+			address: '24 Mountain Road',
+			family: [{
+				name: 'Maru',
+				relationship: 'Daughter'
+			}, {
+				name: 'Demetrius',
+				relationship: 'Husband'
+			}, {
+				name: 'Sebastian',
+				relationship: 'Stepson'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Summer 18'
 		},
 		{
 			name: 'George',
@@ -1325,7 +1532,17 @@ export const data: Data = {
 				'Dandelion',
 				'Holly',
 				'Quartz'
-			]
+			],
+			address: '1 River Road',
+			family: [{
+				name: 'Evelyn',
+				relationship: 'Wife'
+			}, {
+				name: 'Alex',
+				relationship: 'Grandson'
+			}],
+			loveInterest: '',
+			clinicVisit: '23rd of each season'
 		},
 		{
 			name: 'Krobus',
@@ -1378,7 +1595,11 @@ export const data: Data = {
 			],
 			hates: [
 				'All Universal Hates'
-			]
+			],
+			address: 'Krobus\' Shop',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Linus',
@@ -1428,7 +1649,11 @@ export const data: Data = {
 			],
 			hates: [
 				'All Universal Hates'
-			]
+			],
+			address: 'Tent',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Caroline',
@@ -1477,7 +1702,17 @@ export const data: Data = {
 				'All Universal Hates',
 				'Quartz',
 				'Salmonberry'
-			]
+			],
+			address: 'Pierrre\'s General Store',
+			family: [{
+				name: 'Pierre',
+				relationship: 'Husband'
+			}, {
+				name: 'Abigail',
+				relationship: 'Daughter'
+			}],
+			loveInterest: '',
+			clinicVisit: 'Fall 25'
 		},
 		{
 			name: 'Sebastian',
@@ -1535,7 +1770,20 @@ export const data: Data = {
 				'Farmer\'s Lunch',
 				'Omelet',
 				'Piña Colada',
-			]
+			],
+			address: '24 Mountain Road',
+			family: [{
+				name: 'Robin',
+				relationship: 'Mother'
+			}, {
+				name: 'Demetrius',
+				relationship: 'Stepfather'
+			}, {
+				name: 'Maru',
+				relationship: 'Stepsister'
+			}],
+			loveInterest: 'Abigail',
+			clinicVisit: 'Summer 4'
 		},
 		{
 			name: 'Harvey',
@@ -1607,7 +1855,11 @@ export const data: Data = {
 				'Rainbow Shell',
 				'Salmonberry',
 				'Spice Berry'
-			]
+			],
+			address: 'Harvey\'s Clinic',
+			family: [],
+			loveInterest: 'Maru',
+			clinicVisit: ''
 		},
 		{
 			name: 'Wizard',
@@ -1656,7 +1908,11 @@ export const data: Data = {
 			],
 			hates: [
 				'All Universal Hates'
-			]
+			],
+			address: 'Wizard\'s Tower',
+			family: [],
+			loveInterest: '',
+			clinicVisit: ''
 		},
 		{
 			name: 'Evelyn',
@@ -1721,7 +1977,17 @@ export const data: Data = {
 				'Spice Berry',
 				'Spicy Eel',
 				'Trout Soup'
-			]
+			],
+			address: '1 River Road',
+			family: [{
+				name: 'George',
+				relationship: 'Husband'
+			}, {
+				name: 'Alex',
+				relationship: 'Grandson'
+			}],
+			loveInterest: '',
+			clinicVisit: '2nd of each season; 23rd of each season with George'
 		},
 		{
 			name: 'Leah',
@@ -1784,7 +2050,11 @@ export const data: Data = {
 				'Pancakes',
 				'Pizza',
 				'Void Egg',
-			]
+			],
+			address: 'Leah\'s Cottage',
+			family: [],
+			loveInterest: 'Elliot',
+			clinicVisit: 'Spring 16'
 		},
 		{
 			name: 'Clint',
@@ -1844,7 +2114,11 @@ export const data: Data = {
 			hates: [
 				'All Universal Hates',
 				'Holly'
-			]
+			],
+			address: 'Blacksmith',
+			family: [],
+			loveInterest: '',
+			clinicVisit: 'Winter 16'
 		}
 	],
 	items: {

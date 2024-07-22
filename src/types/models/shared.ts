@@ -1,4 +1,4 @@
-import { SeasonId } from '../'
+import { FamilyMember, SeasonId } from '../'
 
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
@@ -16,4 +16,8 @@ export type Villager = {
 	neutral: Array<string>
 	dislikes: Array<string>
 	hates: Array<string>
+	address: string
+	family: Array<FamilyMember>
+	loveInterest: string
+	clinicVisit: string
 }
