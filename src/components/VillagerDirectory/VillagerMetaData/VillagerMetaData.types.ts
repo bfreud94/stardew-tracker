@@ -7,6 +7,7 @@ export interface VillagerMetaDataProps {
 
 export interface VillagerMetaDataStyles {
 	villagerBirthday: CSSProperties
+	villagerFamily: CSSProperties
 	villagerModalHeader: CSSProperties
 	zeroMargin: CSSProperties
 }

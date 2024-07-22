@@ -29,3 +29,8 @@ export type Event = {
 	icon: string
 	notes: Array<string>
 }
+
+export type FamilyMember = {
+	name: string
+	relationship: string
+}
