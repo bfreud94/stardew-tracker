@@ -12,13 +12,14 @@ const SingleNote: FC<SingleNoteProps> = ({
 	index,
 	note,
 	season,
-	setNote
+	setNote,
+	setNoteEditIndex
 }) => {
 	const styles = makeStyles()
 	return (
 		<div style={styles.noteContainer}>
 			<RemoveCircleOutlineIcon color='error' sx={styles.noteDeleteIcon} onClick={() => deleteNote(day, index, false, season, setNote)} />
-			<EditIcon sx={styles.noteEditIcon} onClick={() => editNote(day, index, note, season, setNote)} />
+			<EditIcon sx={styles.noteEditIcon} onClick={() => editNote(day, index, note, season, setNote, setNoteEditIndex)} />
 			<p style={styles.note}>{note}</p>
 		</div>
 	)

@@ -19,6 +19,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 	season
 }) => {
 	const [note, setNote] = useState<string>('')
+	const [noteEditIndex, setNoteEditIndex] = useState<number>(-1)
 
 	const villager = getVillagerFromBirthday(day, season)
 	const savedNotes = getNotesForDay(day, season)
@@ -30,12 +31,28 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 	return (
 		<>
 			{savedNotes && savedNotes.map((savedNote: string, index: number) => (
-				<SingleNote day={day} index={index} key={index} note={savedNote} season={season} setNote={setNote} />
+				<SingleNote
+					day={day}
+					index={index}
+					key={index}
+					note={savedNote}
+					noteEditIndex={noteEditIndex}
+					season={season}
+					setNote={setNote}
+					setNoteEditIndex={setNoteEditIndex}
+				/>
 			))}
 			{isValidVillager(villager) && <BirthdaySection villager={villager} />}
 			{validEvent && <EventContainer event={event} />}
 			<NoteInput note={note} setNote={setNote} />
-			<SubmitNoteButton day={day} note={note} season={season} setNote={setNote} />
+			<SubmitNoteButton
+				day={day}
+				note={note}
+				noteEditIndex={noteEditIndex}
+				season={season}
+				setNote={setNote}
+				setNoteEditIndex={setNoteEditIndex}
+			/>
 		</>
 	)
 }
