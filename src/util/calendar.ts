@@ -6,6 +6,7 @@ import { Affinity,
 	Notes,
 	Season,
 	SeasonId,
+	SetNoteEditIndexStateAction,
 	SetNoteStateAction,
 	SetOpenStateAction,
 	SetSeasonStateAction,
@@ -42,12 +43,12 @@ export const deleteNote = (
 ): void => {
 	const data = getCookieData()
 	const notes = data['Notes'][season][day - 1]
-	notes.splice(index, 1)
-	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
 	if (!isEditing) {
+		notes.splice(index, 1)
 		setNote(' ')
 		setTimeout(() => setNote(''), 0)
 	}
+	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
 }
 
 export const editNote = (
@@ -55,10 +56,12 @@ export const editNote = (
 	index: number,
 	note: string,
 	season: Season,
-	setNote: SetNoteStateAction
+	setNote: SetNoteStateAction,
+	setNoteEditIndex: SetNoteEditIndexStateAction
 ): void => {
 	setNote(note)
 	deleteNote(day, index, true, season, setNote)
+	setNoteEditIndex(index)
 }
 
 const getConvertedKey = (key: string): keyof typeof SEASON_ID_MAP => key as unknown as keyof typeof SEASON_ID_MAP
@@ -122,19 +125,28 @@ export const isValidVillager = (villager: Villager): boolean =>
 	villager.birthday.day !== 0 ||
 	villager.birthday.season !== 1
 
-export const saveNote = (day: number, note: string, season: Season, setNote: SetNoteStateAction): void => {
+export const saveNote = (
+	day: number,
+	note: string,
+	noteEditIndex: number,
+	season: Season,
+	setNote: SetNoteStateAction,
+	setNoteEditIndex: SetNoteEditIndexStateAction
+): void => {
 	if (note === '') {
 		return
 	}
 	setNote('')
-	setNotesForDay(day, note, season)
+	setNotesForDay(day, note, noteEditIndex, season)
+	setNoteEditIndex(-1)
 }
 
 export const setCookieData = (): void => localStorage.setItem(COOKIE_ID, getCookieDefaultValue())
 
-export const setNotesForDay = (day: number, note: string, season: Season): void => {
+export const setNotesForDay = (day: number, note: string, noteEditIndex: number, season: Season): void => {
 	const data = getCookieData()
-	data['Notes'][season][day - 1].push(note)
+	const startIndex = noteEditIndex === -1 ? data['Notes'][season][day - 1].length : noteEditIndex
+	data['Notes'][season][day - 1].splice(startIndex, noteEditIndex === -1 ? 0 : 1, note)
 	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
 }
 
