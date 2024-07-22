@@ -15,12 +15,14 @@ type DataItems = {
 	[itemName: string]: FishData | OtherItemData
 }
 
+export type StardewDate = {
+	season: SeasonId
+	day: number
+}
+
 export type Event = {
 	name: string
-	date: {
-		season: SeasonId
-		day: number
-	},
+	date: StardewDate
 	location: string
 	time: {
 		start: string
