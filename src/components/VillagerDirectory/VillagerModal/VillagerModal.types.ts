@@ -15,6 +15,7 @@ export interface VillagerModalStyles {
 		border: CSSProperties['border']
 		height: CSSProperties['height']
 		left: CSSProperties['left']
+		overflow: CSSProperties['overflow']
 		p: number
 		position: CSSProperties['position']
 		top: CSSProperties['top']
