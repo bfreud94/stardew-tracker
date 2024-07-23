@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
-import { Villager } from '../../../types'
-import { SetOpenStateAction } from '../../../types'
+import { SetOpenStateAction, Villager } from '../../../types'
 
 export interface VillagerModalProps {
 	open: boolean
