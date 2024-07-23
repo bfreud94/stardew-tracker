@@ -1,6 +1,5 @@
 import { CSSProperties } from 'react'
-import { Villager } from '../../../types'
-import { SetOpenStateAction } from '../../../types'
+import { SetOpenStateAction, Villager } from '../../../types'
 
 export interface VillagerModalProps {
 	open: boolean
@@ -15,6 +14,7 @@ export interface VillagerModalStyles {
 		border: CSSProperties['border']
 		height: CSSProperties['height']
 		left: CSSProperties['left']
+		overflow: CSSProperties['overflow']
 		p: number
 		position: CSSProperties['position']
 		top: CSSProperties['top']

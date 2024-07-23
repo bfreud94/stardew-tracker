@@ -7,6 +7,7 @@ const makeStyles = (): VillagerModalStyles => ({
 		fontFamily: 'SVFont',
 		height: 600,
 		left: '50%',
+		overflow: 'auto',
 		p: 4,
 		position: 'absolute' as 'absolute',
 		top: '50%',
