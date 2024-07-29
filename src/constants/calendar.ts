@@ -27,7 +27,8 @@ export const DEFAULT_VILLAGER: Villager = {
 	address: '',
 	family: [],
 	loveInterest: '',
-	clinicVisit: ''
+	clinicVisit: '',
+	schedule: {}
 }
 
 export const DEFAULT_EVENT: Event = {
