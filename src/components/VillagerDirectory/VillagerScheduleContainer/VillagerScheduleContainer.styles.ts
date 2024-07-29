@@ -1,7 +1,7 @@
-import { VillagerAffinitiesContainerStyles } from './VillagerAffinitiesContainer.types'
+import { VillagerScheduleContainerStyles } from './VillagerScheduleContainer.types'
 
-const makeStyles = (): VillagerAffinitiesContainerStyles => ({
-	affinitiesButton: {
+const makeStyles = (): VillagerScheduleContainerStyles => ({
+	villagerScheduleButton: {
 		alignSelf: 'center',
 		borderBlockColor: 'black',
 		color: 'black',
@@ -11,12 +11,12 @@ const makeStyles = (): VillagerAffinitiesContainerStyles => ({
 		marginLeft: '25px',
 		textAlign: 'center'
 	},
-	affinitiesButtonSx: {
+	villagerScheduleButtonSx: {
 		'&:hover': {
 			backgroundColor: 'transparent'
 		}
 	},
-	affinitiesContainer: {
+	villagerScheduleContainer: {
 		display: 'flex'
 	}
 })
