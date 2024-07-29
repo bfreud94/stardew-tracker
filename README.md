@@ -11,7 +11,7 @@ The calculator page is a fast way to calculate the value of the items in your in
 The universal affinities page displays how villagers generally feel when given certain gifts. For example, almost everybody loves a Prismatic Shard, so it is considered a universal love. Conversely, almost everybody hates poppy, so it is considered a universal hate. This page is useful for gifting items to villagers, especially if you forgot about birthdays, or it is Saturday and you haven't gifted a certain villager in the given week
 
 # Villager Directory
-The villager directory page displays information about each villager. Click the villager, and you will see their name, birthday, and affinities
+The villager directory page displays information about each villager. Click the villager, and you will see their name, birthday, affinities, and schedule
 
 # Technology
 This application is built using React, and deployed to Vercel in a Docker container. There are no network requests that are made. Instead, the data is stored in [this file](https://github.com/bfreud94/stardew-tracker/blob/main/src/api/index.ts). When developing, I didn't think it was worth while finding a server where I can consume the data, or develop one myself
