@@ -1,4 +1,4 @@
-import { FamilyMember, StardewDate } from '../'
+import { FamilyMember, StardewDate, VillagerSchedule } from '../'
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
 
@@ -14,4 +14,5 @@ export type Villager = {
 	family: Array<FamilyMember>
 	loveInterest: string
 	clinicVisit: string
+	schedule: VillagerSchedule
 }
