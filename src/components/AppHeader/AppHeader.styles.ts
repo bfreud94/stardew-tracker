@@ -4,7 +4,7 @@ const makeStyles = (): AppHeaderStyles => ({
 	container: {
 		display: 'flex',
 		alignItems: 'center',
-		padding: '10px 20px',
+		padding: '15px 15px',
 		backgroundColor: 'lightblue'
 	},
 	headerElement: {

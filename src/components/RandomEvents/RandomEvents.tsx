@@ -8,9 +8,9 @@ const RandomEvents: FC = () => {
 		<div style={styles.randomEventsContainer}>
 			{data.randomEvents.map((event) => (
 				<div key={event.name}>
-					<h2>{event.name}</h2>
+					<h2 style={styles.randomEventsHeader}>{event.name}</h2>
 					<p>{event.description}</p>
-					<p>Odds: {event.odds}</p>
+					<p style={styles.randomEventsOdds}>Odds: {event.odds}</p>
 				</div>
 			))}
 		</div>

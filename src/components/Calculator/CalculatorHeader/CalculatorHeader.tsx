@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import ResetButton from '../ResetButton/ResetButton'
 import { resetFishAndOtherItems } from '../../../state'
+import makeStyles from './CalculatorHeader.styles'
 import { CalculatorHeaderProps } from './CalculatorHeader.types'
 
 const CalculatorHeader: FC<CalculatorHeaderProps> = ({
@@ -9,11 +10,12 @@ const CalculatorHeader: FC<CalculatorHeaderProps> = ({
 	setFishState,
 	setOtherItemsState
 }) => {
+	const styles = makeStyles()
 	return (
-		<div>
-			<h2>Total Money {fishTotal + otherItemsTotal}</h2>
+		<>
+			<h2 style={styles.calculatorHeader}>Total Money {fishTotal + otherItemsTotal}</h2>
 			<ResetButton buttonText='Reset All' resetFunction={resetFishAndOtherItems} functionArgs={[setFishState, setOtherItemsState]} />
-		</div>
+		</>
 	)
 }
 
