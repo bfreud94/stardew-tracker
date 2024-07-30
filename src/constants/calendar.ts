@@ -2,6 +2,7 @@ import {
 	Affinity,
 	Event,
 	Season,
+	SeasonalEvent,
 	SeasonId,
 	SeasonIdMap,
 	Villager
@@ -44,6 +45,15 @@ export const DEFAULT_EVENT: Event = {
 	},
 	icon: '',
 	notes: []
+}
+
+export const DEFAULT_SEASONAL_EVENT: SeasonalEvent = {
+	name: '',
+	date: {
+		season: 1,
+		day: 1
+	},
+	icon: ''
 }
 
 export const SEASONS: Array<Season> = ['Spring', 'Summer', 'Fall', 'Winter']

@@ -6,6 +6,7 @@ export interface Data {
 	items: DataItems
 	events: Array<Event>
 	randomEvents: Array<RandomEvent>
+	seasonalEvents: Array<SeasonalEvent>
 }
 
 type DataItems = {
@@ -42,4 +43,10 @@ type RandomEvent = {
 	name: string
 	description: string
 	odds: string
+}
+
+export type SeasonalEvent = {
+	name: string
+	date: StardewDate
+	icon: string
 }

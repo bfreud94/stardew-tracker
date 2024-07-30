@@ -1,10 +1,11 @@
 import { data } from '../api'
-import { COOKIE_ID, DEFAULT_EVENT, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
+import { COOKIE_ID, DEFAULT_EVENT, DEFAULT_SEASONAL_EVENT, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
 import { Affinity,
 	CookieData,
 	Event,
 	Notes,
 	Season,
+	SeasonalEvent,
 	SeasonId,
 	SetNoteEditIndexStateAction,
 	SetNoteStateAction,
@@ -22,17 +23,6 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 
 export const createMonthWithWeeks = (): Array<Array<number>> => 
 	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (_, j) => 7 * i + j + 1))
-
-export const dayHasEvent = (day: number, seasonId: SeasonId) => {
-	const event = data.events.find((event: Event) =>
-		event.date.day === day &&
-		getSeasonIdAsNumber(event.date.season) === getSeasonIdAsNumber(seasonId)
-	)
-	if (!event) {
-		return DEFAULT_EVENT
-	}
-	return event
-}
 
 export const deleteNote = (
 	day: number,
@@ -80,6 +70,17 @@ export const getCookieDefaultValue = (): string => {
     return JSON.stringify(COOKIE_NOTES)
 }
 
+export const getEventFromDay = (day: number, seasonId: SeasonId): Event => {
+	const event = data.events.find((event: Event) =>
+		event.date.day === day &&
+		getSeasonIdAsNumber(event.date.season) === getSeasonIdAsNumber(seasonId)
+	)
+	if (!event) {
+		return DEFAULT_EVENT
+	}
+	return event
+}
+
 export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number =>
 	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
 
@@ -91,6 +92,17 @@ export const getNotesForDay = (day: number, season: Season): Notes => {
 	}
 
 	return data['Notes'][season][day - 1]
+}
+
+export const getSeasonalEvent = (day: number, seasonId: SeasonId): SeasonalEvent => {
+	const seasonalEvent = data.seasonalEvents.find((event: SeasonalEvent) =>
+		event.date.day === day &&
+		getSeasonIdAsNumber(event.date.season) === getSeasonIdAsNumber(seasonId)
+	)
+	if (!seasonalEvent) {
+		return DEFAULT_SEASONAL_EVENT
+	}
+	return seasonalEvent
 }
 
 export const getSeasonId = (season: string): SeasonId =>
@@ -120,6 +132,10 @@ export const isValidEvent = (event: Event): boolean =>
 	event.location !== '' &&
 	event.time.start !== '' &&
 	event.time.end !== ''
+
+export const isValidSeasonalEvent = (event: SeasonalEvent): boolean =>
+	event.name !== '' &&
+	event.icon !== ''
 
 export const isValidVillager = (villager: Villager): boolean =>
 	villager.birthday.day !== 0 ||

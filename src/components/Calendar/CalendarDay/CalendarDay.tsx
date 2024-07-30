@@ -3,10 +3,12 @@ import ImageComponent from '../../ImageComponent/ImageComponent'
 import NotesSection from '../NotesSection/NotesSection'
 import NoteModal from '../NoteModal/NoteModal'
 import {
-	dayHasEvent,
+	getEventFromDay,
+	getSeasonalEvent,
 	getSeasonId,
 	getVillagerFromBirthday,
 	isValidEvent,
+	isValidSeasonalEvent,
 	isValidVillager,
 	toggleCalendarModal,
 } from '../../../util'
@@ -24,8 +26,11 @@ const CalendarDay: FC<CalendarDayProps> = ({
 	const validVillager = isValidVillager(villager)
 
 	const seasonId = getSeasonId(season)
-	const event = dayHasEvent(day, seasonId)
+	const event = getEventFromDay(day, seasonId)
 	const validEvent = isValidEvent(event)
+
+	const seasonalEvent = getSeasonalEvent(day, seasonId)
+	const validSeasonalEvent = isValidSeasonalEvent(seasonalEvent)
 	
     return (
         <div style={styles.day} onClick={() => toggleCalendarModal(open, setOpen)}>
@@ -40,6 +45,9 @@ const CalendarDay: FC<CalendarDayProps> = ({
 			<NotesSection day={day} season={season} />
 			{validEvent &&
 				<ImageComponent style={styles.event} altText='Event' fileName={event.icon} />
+			}
+			{validSeasonalEvent &&
+				<ImageComponent style={styles.seasonalEvent} altText='Seasonal Event' fileName={seasonalEvent.icon} height='28px' width='28px' />
 			}
         </div>
     )

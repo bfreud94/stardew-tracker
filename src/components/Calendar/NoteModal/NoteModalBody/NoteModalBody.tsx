@@ -5,7 +5,7 @@ import NoteInput from '../NoteInput/NoteInput'
 import SingleNote from '../SingleNote/SingleNote'
 import SubmitNoteButton from '../SubmitNoteButton/SubmitNoteButton'
 import {
-	dayHasEvent,
+	getEventFromDay,
 	getNotesForDay,
 	getSeasonId,
 	getVillagerFromBirthday,
@@ -25,7 +25,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 	const savedNotes = getNotesForDay(day, season)
 
 	const seasonId = getSeasonId(season)
-	const event = dayHasEvent(day, seasonId)
+	const event = getEventFromDay(day, seasonId)
 	const validEvent = isValidEvent(event)
 
 	return (

@@ -12,4 +12,5 @@ export interface CalendarDayStyles {
 	dayNumber: CSSProperties
 	event: CSSProperties
 	imageContainer: CSSProperties
+	seasonalEvent: CSSProperties
 }
