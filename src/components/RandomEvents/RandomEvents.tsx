@@ -1,9 +1,8 @@
 import { FC } from 'react'
 import { data } from '../../api'
 import makeStyles from './RandomEvents.styles'
-import { RandomEventsProps } from './RandomEvents.types'
 
-const RandomEvents: FC<RandomEventsProps> = () => {
+const RandomEvents: FC = () => {
 	const styles = makeStyles()
 	return (
 		<div style={styles.randomEventsContainer}>
