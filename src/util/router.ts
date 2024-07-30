@@ -14,6 +14,9 @@ export const setActiveComponent = (componentName: string, navigate: NavigateFunc
 		case 'Villager Directory':
 			navigate('/villager-directory')
 			break
+		case 'Random Events':
+			navigate('/random-events')
+			break
 		default:
 			navigate('/')
 	}

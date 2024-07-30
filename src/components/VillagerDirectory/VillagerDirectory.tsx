@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import ImageComponent from '../ImageComponent/ImageComponent'
 import VillagerModal from './VillagerModal/VillagerModal'
-import { data } from '../../api/index'
+import { data } from '../../api'
 import { DEFAULT_VILLAGER } from '../../constants'
 import { Villager } from '../../types'
 import { toggleVillagerModal } from '../../util'

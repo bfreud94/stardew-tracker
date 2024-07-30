@@ -5,6 +5,7 @@ export interface Data {
 	villagers: Array<Villager>
 	items: DataItems
 	events: Array<Event>
+	randomEvents: Array<RandomEvent>
 }
 
 type DataItems = {
@@ -35,4 +36,10 @@ export type Event = {
 export type FamilyMember = {
 	name: string
 	relationship: string
+}
+
+type RandomEvent = {
+	name: string
+	description: string
+	odds: string
 }
