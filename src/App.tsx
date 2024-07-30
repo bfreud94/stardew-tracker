@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import AppHeader from './components/AppHeader/AppHeader'
 import Calculator from './components/Calculator/Calculator'
 import CalendarContainer from './components/Calendar/CalendarContainer/CalendarContainer'
+import RandomEvents from './components/RandomEvents/RandomEvents'
 import UniversalAffinities from './components/UniversalAffinities/UniversalAffinities'
 import VillagerDirectory from './components/VillagerDirectory/VillagerDirectory'
 import { Season } from './types'
@@ -26,6 +27,7 @@ const App: FC = () => {
 				<Route path='/calculator' element={<Calculator />} />
 				<Route path='/universal-affinities' element={<UniversalAffinities />} />
 				<Route path='/villager-directory' element={<VillagerDirectory />} />
+				<Route path='/random-events' element={<RandomEvents />} />
 				<Route path='/' element={<Navigate to='/calendar' replace />} />
 			</Routes>
 		</BrowserRouter>
