@@ -24,6 +24,9 @@ const makeStyles = (): CalendarDayStyles => ({
 	},
 	imageContainer: {
 		display: 'flex'
+	},
+	seasonalEvent: {
+		marginLeft: '5px'
 	}
 })
 
