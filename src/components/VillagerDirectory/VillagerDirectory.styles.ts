@@ -6,12 +6,13 @@ const makeStyles = (): VillagerDirectoryStyles => ({
 		marginBottom: '25px'
 	},
 	villagerDirectoryContainer: {
+		backgroundColor: '#FFF0BA',
 		display: 'grid',
 		fontFamily: 'SVFont',
 		fontSize: '24px',
 		gridTemplateColumns: 'repeat(8, 1fr)',
-		marginTop: '10px',
-		padding: '0px 10px'
+		minHeight: '100vh',
+		padding: '10px 10px 0px 10px'
 	},
 	zeroMargin: {
 		margin: '0'
