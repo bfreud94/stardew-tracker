@@ -58,11 +58,10 @@ export const DEFAULT_SEASONAL_EVENT: SeasonalEvent = {
 
 export const SEASONS: Array<Season> = ['Spring', 'Summer', 'Fall', 'Winter']
 
-export const SEASON_ID_MAP: SeasonIdMap = {
-	1: 'Spring',
-	2: 'Summer',
-	3: 'Fall',
-	4: 'Winter'
-}
+export const SEASON_ID_MAP: SeasonIdMap = SEASONS
+	.reduce((map: SeasonIdMap, season: Season, index: number) => ({
+		...map,
+		[index + 1]: season
+	}), {} as SeasonIdMap)
 
 export const VALID_SEASON_IDS: Array<SeasonId> = [1, 2, 3, 4]

@@ -4,6 +4,8 @@ import {
 	ArrowBack as ArrowBackIcon,
 	ArrowForward as ArrowForwardIcon
  } from '@mui/icons-material'
+ import { SEASONS } from '../../../constants'
+ import { Season } from '../../../types'
  import { changeSeason } from '../../../util'
 import makeStyles from './CalendarHeader.styles'
 import { CalendarHeaderProps } from './CalendarHeader.types'
@@ -13,22 +15,22 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
 	setSeason
 }) => {
 	const styles = makeStyles()
+	const calendarButtons = SEASONS.map((season: Season) => (
+		<Button
+			key={season}
+			disableRipple
+			style={styles.changeSeasonButton}
+			sx={styles.changeSeasonButtonSx}
+			onClick={() => setSeason(season)}
+		>
+			{season}
+		</Button>
+	))
+	calendarButtons.splice(2, 0, <span key='current-season'>{season}</span>)
 	return (
 		<div style={styles.header}>
 			<ArrowBackIcon style={styles.header} onClick={() => changeSeason(false, season, setSeason)} />
-			<Button style={styles.changeSeasonButton} sx={styles.changeSeasonButtonSx} onClick={() => setSeason('Spring')}>
-				Spring
-			</Button>
-			<Button style={styles.changeSeasonButton} sx={styles.changeSeasonButtonSx} onClick={() => setSeason('Summer')}>
-				Summer
-			</Button>
-			<span>{season}</span>
-			<Button style={styles.changeSeasonButton} sx={styles.changeSeasonButtonSx} onClick={() => setSeason('Fall')}>
-				Fall
-			</Button>
-			<Button style={styles.changeSeasonButton} sx={styles.changeSeasonButtonSx} onClick={() => setSeason('Winter')}>
-				Winter
-			</Button>
+			{calendarButtons}
 			<ArrowForwardIcon style={styles.header} onClick={() => changeSeason(true, season, setSeason)} />
 		</div>
 	)
