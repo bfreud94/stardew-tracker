@@ -2,8 +2,10 @@ import { AppHeaderStyles } from './AppHeader.types'
 
 const makeStyles = (): AppHeaderStyles => ({
 	container: {
-		display: 'flex',
 		alignItems: 'center',
+		display: 'flex',
+		fontFamily: 'SVFont',
+		fontSize: '24px',
 		padding: '15px 15px',
 		backgroundColor: 'lightblue'
 	},
