@@ -6,7 +6,9 @@ const makeStyles = (): SingleNoteStyles => ({
 	},
 	noteContainer: {
 		alignItems: 'center',
-		display: 'flex'
+		display: 'flex',
+		fontFamily: 'SVFont',
+		fontSize: '24px'
 	},
 	noteDeleteIcon: {
 		cursor: 'pointer',
