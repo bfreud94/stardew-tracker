@@ -2,7 +2,9 @@ export type SeasonId = 1 | 2 | 3 | 4
 
 export type Season = 'Spring' | 'Summer' | 'Fall' | 'Winter'
 
-export type SeasonIdMap = Record<SeasonId, Season>
+export type SeasonIdMap = {
+	[key: number]: Season
+}
 
 export type Notes = Array<string>
 
