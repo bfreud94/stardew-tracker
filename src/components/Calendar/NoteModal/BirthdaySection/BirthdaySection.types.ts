@@ -1,8 +1,10 @@
 import { CSSProperties } from 'react'
 import { SxProps } from '@mui/material'
-import { Villager } from '../../../../types'
+import { SetShowAffinitiesAction, Villager } from '../../../../types'
 
 export interface BirthdaySectionProps {
+	showAffinities: boolean
+	setShowAffinities: SetShowAffinitiesAction
 	villager: Villager
 }
 

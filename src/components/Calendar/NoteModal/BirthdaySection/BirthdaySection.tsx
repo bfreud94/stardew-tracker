@@ -1,15 +1,15 @@
 import { FC, useState } from 'react'
 import { Button, Typography } from '@mui/material'
-import AffinitiesContainer from '../../../shared/AffinitiesContainer/AffinitiesContainer'
 import ImageComponent from '../../../ImageComponent/ImageComponent'
 import { getButtonText } from '../../../../util'
 import makeStyles from './BirthdaySection.styles'
 import { BirthdaySectionProps } from './BirthdaySection.types'
 
 const BirthdaySection: FC<BirthdaySectionProps> = ({
+	showAffinities,
+	setShowAffinities,
 	villager
 }) => {
-	const [showAffinities, setShowAffinities] = useState<boolean>(false)
 	const styles = makeStyles()
 	return (
 		<>
@@ -29,7 +29,6 @@ const BirthdaySection: FC<BirthdaySectionProps> = ({
 					<ImageComponent style={styles.villagerIcon} altText={villager.name} fileName={`/villagers/${villager.name}.png`} height='32px' width='32px' />
 				</div>
 			</div>
-			{showAffinities && <AffinitiesContainer villager={villager} />}
 		</>
 	)
 }

@@ -15,6 +15,7 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
 	setSeason
 }) => {
 	const styles = makeStyles()
+
 	const calendarButtons = SEASONS.map((season: Season) => (
 		<Button
 			key={season}
@@ -26,7 +27,9 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
 			{season}
 		</Button>
 	))
+
 	calendarButtons.splice(2, 0, <span key='current-season'>{season}</span>)
+
 	return (
 		<div style={styles.header}>
 			<ArrowBackIcon style={styles.header} onClick={() => changeSeason(false, season, setSeason)} />
