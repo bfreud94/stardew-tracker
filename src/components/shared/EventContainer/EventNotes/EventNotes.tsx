@@ -10,17 +10,17 @@ const EventNotes: FC<EventNotesProps> = ({
 	return (
 		<div style={styles.eventNoteContainer}>
 			<span>Notes:</span>
-			{event.notes.map((note: string, index: number) => (
+			{event.notes.map((note: string) => (
 				note.includes('IMAGE') ? (
 					<ImageComponent
-						key={index}
+						key={note}
 						altText='Egg Hunt Map'
 						fileName={note.split(':')[1]}
 						height='600px'
 						width='600px'
 					/>
 				) : (
-					<pre key={index} style={styles.note}>{note}</pre>
+					<pre key={note} style={styles.note}>{note}</pre>
 				)
 			))}
 		</div>

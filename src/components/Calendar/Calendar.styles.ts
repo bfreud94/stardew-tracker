@@ -1,4 +1,3 @@
-
 import { CalendarStyles } from './Calendar.types'
 
 const makeStyles = (): CalendarStyles => ({

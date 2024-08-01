@@ -32,4 +32,3 @@ const FishGroup: FC<FishGroupProps> = ({
 }
 
 export default FishGroup
-

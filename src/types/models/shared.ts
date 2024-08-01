@@ -1,4 +1,4 @@
-import { FamilyMember, StardewDate, VillagerSchedule } from '../'
+import { FamilyMember, StardewDate, VillagerSchedule } from '..'
 
 export type Affinity = 'loves' | 'likes' | 'neutral' | 'dislikes' | 'hates'
 

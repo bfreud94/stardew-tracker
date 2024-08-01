@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import { FishState, OtherItemsState } from '../'
+import { FishState, OtherItemsState } from '..'
 
 export type SetFishStateAction = Dispatch<SetStateAction<FishState>>
 

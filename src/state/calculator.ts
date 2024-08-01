@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react'
 import { data } from '../api'
-import { DEFAULT_FISH_STATE,
+import {
+	DEFAULT_FISH_STATE,
 	DEFAULT_FISH_QUALITY_STATE,
 	FISH_DEFAULT_INPUT_VALUE,
 	OTHER_ITEMS_DEFAULT_INPUT_VALUE,
@@ -17,18 +18,23 @@ import {
 	SetOtherItemsStateAction,
 	SubItems
 } from '../types'
-import { getFishItemFromData, isValidFishName, isValidFishQuality, isValidOtherItemName } from '../util'
+import {
+	getFishItemFromData,
+	isValidFishName,
+	isValidFishQuality,
+	isValidOtherItemName
+} from '../util'
 
 export const createFishState = (): FishState => Object.keys(data.items.fish)
 	.reduce((acc: FishState, fishName: string) => {
 		if (isValidFishName(fishName)) {
 			const fishItem = getFishItemFromData(fishName)
 			if (fishItem !== null) {
-				const fishItemQualityComponents = Object.keys(fishItem).reduce((acc: FishQuality, quality: string) => {
+				const fishItemQualityComponents = Object.keys(fishItem).reduce((componentAcc: FishQuality, quality: string) => {
 					if (isValidFishQuality(quality)) {
-						acc[quality] = FISH_DEFAULT_INPUT_VALUE
+						componentAcc[quality] = FISH_DEFAULT_INPUT_VALUE
 					}
-					return acc
+					return componentAcc
 				}, DEFAULT_FISH_QUALITY_STATE)
 				acc[fishName] = fishItemQualityComponents
 			}
@@ -53,7 +59,7 @@ export const getStateForFish = (fishState: FishState, fishName: string): FishQua
 export const resetEntireOtherItemsState = (
 	setState: SetOtherItemsStateAction
 ): void => {
-	const { fish, ...items} = data.items
+	const items = Object.fromEntries(Object.entries(data.items).filter(([key]) => key !== 'fish'))
 	const resetState: OtherItemsState = Object.keys(items).reduce((acc: OtherItemsState, item: string): OtherItemsState => {
 		if (isValidOtherItemName(item)) {
 			const stuff = items[item as OtherItemName] as OtherItemData
@@ -70,7 +76,7 @@ export const resetFishAmount = (
 	setFishState: SetFishStateAction
 ) => {
 	const fishItem = getFishItemFromData(fishName)
-	if (fishItem !== null)  {
+	if (fishItem !== null)	{
 		const fishItemQualityAmounts = Object.keys(fishItem).reduce((acc: FishQuality, quality: string) => {
 			if (isValidFishQuality(quality))	{
 				acc[quality] = FISH_DEFAULT_INPUT_VALUE

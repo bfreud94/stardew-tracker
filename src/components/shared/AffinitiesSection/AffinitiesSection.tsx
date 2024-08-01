@@ -10,12 +10,12 @@ const AffinitiesSection: FC<AffinitiesSectionProps> = ({
 	variant,
 	villager
 }) => {
-	const styles = makeStyles()
+	const styles = makeStyles(affinity)
 	return (
-		<div style={styles.affinitiesContainer(affinity)}>
+		<div style={styles.affinitiesContainer}>
 			<Typography style={styles.text} variant={headerVariant}>{getAffinityLabel(affinity)}</Typography>
-			{villager[affinity].map((like: string, index: number) => (
-				<Typography key={index} style={styles.text} variant={variant}>{like}</Typography>
+			{villager[affinity].map((like: string) => (
+				<Typography key={like} style={styles.text} variant={variant}>{like}</Typography>
 			))}
 		</div>
 	)

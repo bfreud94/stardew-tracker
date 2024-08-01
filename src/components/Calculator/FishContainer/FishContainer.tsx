@@ -21,7 +21,6 @@ const FishContainer: FC<FishContainerProps> = ({
 			</div>
 		</div>
 	)
-
 }
 
 export default FishContainer

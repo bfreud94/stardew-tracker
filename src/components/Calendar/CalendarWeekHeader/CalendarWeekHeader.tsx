@@ -6,8 +6,8 @@ const CalendarWeekHeader: FC = () => {
 	const styles = makeStyles()
 	return (
 		<div style={styles.header}>
-			{DAYS.map((day, index) => (
-				<div key={index} style={styles.row}>
+			{DAYS.map((day: string) => (
+				<div key={day} style={styles.row}>
 					{day}
 				</div>
 			))}

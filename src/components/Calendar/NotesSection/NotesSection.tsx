@@ -11,8 +11,8 @@ const NotesSection: FC<NotesSectionProps> = ({
 	const savedNotes = getNotesForDay(day, season)
 	return (
 		<div>
-			{savedNotes.map((savedNote: string, index: number) => (
-				<p key={index} style={styles.noteText}>
+			{savedNotes.map((savedNote: string) => (
+				<p key={savedNote} style={styles.noteText}>
 					{savedNote}
 				</p>
 			))}

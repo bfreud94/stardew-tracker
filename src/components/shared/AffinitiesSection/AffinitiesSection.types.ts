@@ -10,6 +10,6 @@ export interface AffinitiesSectionProps {
 }
 
 export interface AffinitiesSectionStyles {
-	affinitiesContainer: (affinities: Affinity) => CSSProperties
+	affinitiesContainer: CSSProperties
 	text: CSSProperties
 }

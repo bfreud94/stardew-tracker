@@ -1,4 +1,4 @@
-import { FishName, QualityName } from '../'
+import { FishName, QualityName } from '..'
 
 export type FishData = Record<FishName, FishQuality>
 

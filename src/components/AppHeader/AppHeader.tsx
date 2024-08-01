@@ -8,8 +8,8 @@ const AppHeader: FC = () => {
 	const navigate = useNavigate()
     return (
 		<div style={styles.container}>
-			{APP_HEADER_ELEMENTS.map((element, index) => (
-				<div key={index} style={styles.headerElement} onClick={() => setActiveComponent(element, navigate)}>
+			{APP_HEADER_ELEMENTS.map((element) => (
+				<div key={element} style={styles.headerElement} onClick={() => setActiveComponent(element, navigate)}>
 					{element}
 				</div>
 			))}

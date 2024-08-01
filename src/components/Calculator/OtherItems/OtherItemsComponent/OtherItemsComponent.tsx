@@ -2,8 +2,7 @@ import { ChangeEvent, FC } from 'react'
 import ItemWithInput from '../../ItemWithInput/ItemWithInput'
 import OtherItemHeader from '../OtherItemHeader/OtherItemHeader'
 import { getOtherItemCopy } from '../../../../copy'
-import { OtherItemsState } from '../../../../types'
-import { getOtherItem } from '../../../../util'
+import { getOtherItem, itemInputOnChange } from '../../../../util'
 import makeStyles from './OtherItemsComponent.styles'
 import { OtherItemsComponentProps } from './OtherItemsComponent.types'
 
@@ -26,18 +25,15 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 				const { costAndMultiplier, ellipsesAndTotal, subItemValue } = getOtherItemCopy(itemName, itemData, state, subItemName)
 				return (
 					<div key={subItemName} style={styles.inputContainer}>
-						<ItemWithInput itemName={subItemName} costAndMultiplier={costAndMultiplier} ellipsesAndTotal={ellipsesAndTotal} onChange={(e: ChangeEvent<HTMLInputElement>) => {
-							setState((prevState: OtherItemsState) => {
-								const prevItems = prevState[itemName]
-								return {
-									...prevState,
-									[itemName]: {
-										...prevItems,
-										[subItemName]: e.target.value
-									}
-								}
-							})
-						}} value={subItemValue} />
+						<ItemWithInput
+							costAndMultiplier={costAndMultiplier}
+							ellipsesAndTotal={ellipsesAndTotal}
+							itemName={subItemName}
+							onChange={(e: ChangeEvent<HTMLInputElement>) =>
+								itemInputOnChange(e, itemName, setState, subItemName)
+							}
+							value={subItemValue}
+						/>
 					</div>
 				)
 			})}

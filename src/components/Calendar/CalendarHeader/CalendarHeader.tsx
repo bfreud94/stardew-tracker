@@ -16,15 +16,15 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
 }) => {
 	const styles = makeStyles()
 
-	const calendarButtons = SEASONS.map((season: Season) => (
+	const calendarButtons = SEASONS.map((currentSeason: Season) => (
 		<Button
-			key={season}
+			key={currentSeason}
 			disableRipple
 			style={styles.changeSeasonButton}
 			sx={styles.changeSeasonButtonSx}
-			onClick={() => setSeason(season)}
+			onClick={() => setSeason(currentSeason)}
 		>
-			{season}
+			{currentSeason}
 		</Button>
 	))
 
