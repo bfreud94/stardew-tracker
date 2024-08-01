@@ -48,7 +48,7 @@
 		"no-confusing-arrow": "off",
 		"no-param-reassign": "off",
 		"no-tabs": "off",
-		"no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+		"no-unused-vars": ["error", { "argsIgnorePattern": "^_|args" }],
 		"no-use-before-define": "off",
 		"operator-linebreak": "off",
 		"prefer-template": "off",
