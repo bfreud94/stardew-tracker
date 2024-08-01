@@ -9,7 +9,7 @@ const makeStyles = (): VillagerModalStyles => ({
 		left: '50%',
 		overflow: 'auto',
 		p: 4,
-		position: 'absolute' as 'absolute',
+		position: 'absolute' as const,
 		top: '50%',
 		transform: 'translate(-50%, -50%)',
 		width: 600

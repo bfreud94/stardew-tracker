@@ -1,6 +1,14 @@
 import { data } from '../api'
-import { COOKIE_ID, DEFAULT_EVENT, DEFAULT_SEASONAL_EVENT, DEFAULT_VILLAGER, SEASONS, SEASON_ID_MAP, VALID_SEASON_IDS } from '../constants'
-import { Affinity,
+import {
+	COOKIE_ID,
+	DEFAULT_EVENT,
+	DEFAULT_SEASONAL_EVENT,
+	DEFAULT_VILLAGER, SEASONS,
+	SEASON_ID_MAP,
+	VALID_SEASON_IDS
+} from '../constants'
+import {
+	Affinity,
 	CookieData,
 	Event,
 	Notes,
@@ -21,8 +29,8 @@ export const changeSeason = (isForward: boolean, season: Season, setSeason: SetS
 	setSeason(nextSeason)
 }
 
-export const createMonthWithWeeks = (): Array<Array<number>> => 
-	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (_, j) => 7 * i + j + 1))
+export const createMonthWithWeeks = (): Array<Array<number>> =>
+	Array.from({ length: 4 }, (_, i) => Array.from({ length: 7 }, (__, j) => 7 * i + j + 1))
 
 export const deleteNote = (
 	day: number,
@@ -31,14 +39,14 @@ export const deleteNote = (
 	season: Season,
 	setNote: SetNoteStateAction
 ): void => {
-	const data = getCookieData()
-	const notes = data['Notes'][season][day - 1]
+	const cookieData = getCookieData()
+	const notes = cookieData.Notes[season][day - 1]
 	if (!isEditing) {
 		notes.splice(index, 1)
 		setNote(' ')
 		setTimeout(() => setNote(''), 0)
 	}
-	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
+	localStorage.setItem(COOKIE_ID, JSON.stringify(cookieData))
 }
 
 export const editNote = (
@@ -57,13 +65,13 @@ export const editNote = (
 const getConvertedKey = (key: string): keyof typeof SEASON_ID_MAP => key as unknown as keyof typeof SEASON_ID_MAP
 
 export const getCookieData = (): CookieData => {
-	const data = localStorage.getItem(COOKIE_ID)
-	return data ? JSON.parse(data) : {}
+	const cookieData = localStorage.getItem(COOKIE_ID)
+	return cookieData ? JSON.parse(cookieData) : {}
 }
 
 export const getCookieDefaultValue = (): string => {
     const COOKIE_NOTES = SEASONS.reduce((acc: CookieData, season: Season) => {
-        acc.Notes[season] = Array.from({ length: 30 }, (_) => [])
+        acc.Notes[season] = Array.from({ length: 30 }, () => [])
         return acc
     }, { Notes: {} } as CookieData)
 
@@ -71,9 +79,9 @@ export const getCookieDefaultValue = (): string => {
 }
 
 export const getEventFromDay = (day: number, seasonId: SeasonId): Event => {
-	const event = data.events.find((event: Event) =>
-		event.date.day === day &&
-		getSeasonIdAsNumber(event.date.season) === getSeasonIdAsNumber(seasonId)
+	const event = data.events.find((currentEvent: Event) =>
+		currentEvent.date.day === day
+		&& getSeasonIdAsNumber(currentEvent.date.season) === getSeasonIdAsNumber(seasonId)
 	)
 	if (!event) {
 		return DEFAULT_EVENT
@@ -85,13 +93,13 @@ export const getNextSeasonId = (isForward: boolean, seasonId: SeasonId): number 
 	isForward ? ((getSeasonIdAsNumber(seasonId) + 1) % 4 || 4) : ((getSeasonIdAsNumber(seasonId) - 1) % 4 || 4)
 
 export const getNotesForDay = (day: number, season: Season): Notes => {
-	const data = getCookieData()
-	
-	if (Object.keys(data).length === 0) {
+	const cookieData = getCookieData()
+
+	if (Object.keys(cookieData).length === 0) {
 		return []
 	}
 
-	return data['Notes'][season][day - 1]
+	return cookieData.Notes[season][day - 1]
 }
 
 export const getSeasonalEvent = (day: number, seasonId: SeasonId): SeasonalEvent => {
@@ -111,11 +119,11 @@ export const getSeasonId = (season: string): SeasonId =>
 		return SEASON_ID_MAP[convertedKey] === season
 	}) || 1) as SeasonId
 
-const getSeasonIdAsNumber = (seasonId: SeasonId) => parseInt(seasonId + '')
+const getSeasonIdAsNumber = (seasonId: SeasonId): number => parseInt(seasonId + '')
 
 export const getVillagerFromBirthday = (birthdayDay: number, season: Season): Villager => {
-	const villager = data.villagers.find((villager: Villager) =>
-		villager.birthday.day === birthdayDay && villager.birthday.season === getSeasonIdAsNumber(getSeasonId(season))
+	const villager = data.villagers.find((currentVillager: Villager) =>
+		currentVillager.birthday.day === birthdayDay && currentVillager.birthday.season === getSeasonIdAsNumber(getSeasonId(season))
 	)
 	if (!villager) {
 		return DEFAULT_VILLAGER
@@ -160,10 +168,10 @@ export const saveNote = (
 export const setCookieData = (): void => localStorage.setItem(COOKIE_ID, getCookieDefaultValue())
 
 export const setNotesForDay = (day: number, note: string, noteEditIndex: number, season: Season): void => {
-	const data = getCookieData()
-	const startIndex = noteEditIndex === -1 ? data['Notes'][season][day - 1].length : noteEditIndex
-	data['Notes'][season][day - 1].splice(startIndex, noteEditIndex === -1 ? 0 : 1, note)
-	localStorage.setItem(COOKIE_ID, JSON.stringify(data))
+	const cookieData = getCookieData()
+	const startIndex = noteEditIndex === -1 ? cookieData.Notes[season][day - 1].length : noteEditIndex
+	cookieData.Notes[season][day - 1].splice(startIndex, noteEditIndex === -1 ? 0 : 1, note)
+	localStorage.setItem(COOKIE_ID, JSON.stringify(cookieData))
 }
 
 export const toggleCalendarModal = (open: boolean, setOpen: SetOpenStateAction) => {

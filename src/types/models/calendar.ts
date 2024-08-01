@@ -1,5 +1,5 @@
-import { FishData, OtherItemData, Villager } from './'
-import { SeasonId } from '../'
+import { FishData, OtherItemData, Villager } from '.'
+import { SeasonId } from '..'
 
 export interface Data {
 	villagers: Array<Villager>

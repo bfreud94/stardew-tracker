@@ -9,8 +9,8 @@ const CalendarBody: FC<CalendarBodyProps> = ({
 	const months = createMonthWithWeeks()
 	return (
 		<>
-			{months.map((week: Array<number>, index: number) => (
-				<CalendarRow key={index} season={season} week={week} />
+			{months.map((week: Array<number>) => (
+				<CalendarRow key={week[0]} season={season} week={week} />
 			))}
 		</>
 	)

@@ -8,10 +8,11 @@ const NoteInput: FC<NoteInputProps> = ({
 }) => {
 	const styles = makeStyles()
 	return (
-		<input type='text'
-			placeholder='Enter your note here'
-			style={styles.noteInput} value={note}
+		<input
 			onChange={(e) => setNote(e.target.value)}
+			placeholder='Enter your note here'
+			style={styles.noteInput}
+			value={note}
 		/>
 	)
 }

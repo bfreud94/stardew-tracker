@@ -5,10 +5,10 @@ const ImageComponent: FC<ImageComponentProps> = ({
 	altText,
 	fileName,
 	height,
+	style,
 	width,
-	...props
 }) => (
-	<img src={`/assets/${fileName}`} height={height} width={width} alt={altText} {...props} />
+	<img src={`/assets/${fileName}`} style={style} height={height} width={width} alt={altText} />
 )
 
 export default ImageComponent

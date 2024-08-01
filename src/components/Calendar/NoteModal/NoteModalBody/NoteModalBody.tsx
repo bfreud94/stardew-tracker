@@ -37,7 +37,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 				<SingleNote
 					day={day}
 					index={index}
-					key={index}
+					key={day}
 					note={savedNote}
 					noteEditIndex={noteEditIndex}
 					season={season}
@@ -56,7 +56,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 				season={season}
 				setNote={setNote}
 				setNoteEditIndex={setNoteEditIndex}
-				/>
+			/>
 		</>
 	)
 }

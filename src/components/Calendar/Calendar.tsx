@@ -1,4 +1,3 @@
-
 import { FC } from 'react'
 import CalendarBody from './CalendarBody/CalendarBody'
 import CalendarWeekHeader from './CalendarWeekHeader/CalendarWeekHeader'

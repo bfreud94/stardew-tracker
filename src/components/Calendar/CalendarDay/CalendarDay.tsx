@@ -31,16 +31,16 @@ const CalendarDay: FC<CalendarDayProps> = ({
 
 	const seasonalEvent = getSeasonalEvent(day, seasonId)
 	const validSeasonalEvent = isValidSeasonalEvent(seasonalEvent)
-	
+
     return (
         <div style={styles.day} onClick={() => toggleCalendarModal(open, setOpen)}>
             <p style={styles.dayNumber}>{day}</p>
 			<NoteModal day={day} open={open} season={season} setOpen={setOpen} />
 			{validVillager &&
-			<div style={styles.imageContainer}>
-				<ImageComponent style={styles.birthday} altText='Birthday' fileName='/Birthday.png' height='37px' width='29px' />
-				<ImageComponent altText={villager.name} fileName={`/villagers/${villager.name}.png`} height='32px' width='32px' />
-			</div>
+				<div style={styles.imageContainer}>
+					<ImageComponent style={styles.birthday} altText='Birthday' fileName='/Birthday.png' height='37px' width='29px' />
+					<ImageComponent altText={villager.name} fileName={`/villagers/${villager.name}.png`} height='32px' width='32px' />
+				</div>
 			}
 			<NotesSection day={day} season={season} />
 			{validEvent &&

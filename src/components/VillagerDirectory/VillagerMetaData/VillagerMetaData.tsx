@@ -2,10 +2,9 @@ import { FC } from 'react'
 import ImageComponent from '../../ImageComponent/ImageComponent'
 import { SEASON_ID_MAP } from '../../../constants'
 import { FamilyMember } from '../../../types'
+import { getVillagerMarriage } from '../../../util'
 import makeStyles from './VillagerMetaData.styles'
 import { VillagerMetaDataProps } from './VillagerMetaData.types'
-
-const getVillagerMarriage = (loveInterest: string): string => loveInterest !== '' ? 'Yes' : 'No'
 
 const VillagerMetaData: FC<VillagerMetaDataProps> = ({
 	villager
@@ -31,8 +30,8 @@ const VillagerMetaData: FC<VillagerMetaDataProps> = ({
 			</div>
 			<div style={styles.villagerFamily}>
 				<p style={styles.zeroMargin}>Family:</p>
-				{villager.family.map((familyMember: FamilyMember, index: number) => (
-					<p style={styles.zeroMargin} key={index}>{`${familyMember.name} - ${familyMember.relationship}`}</p>
+				{villager.family.map((familyMember: FamilyMember) => (
+					<p style={styles.zeroMargin} key={familyMember.name}>{`${familyMember.name} - ${familyMember.relationship}`}</p>
 				))}
 			</div>
 		</div>

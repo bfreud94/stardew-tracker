@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react'
 import { data } from '../api'
 import {
 	FishData,
@@ -8,7 +9,8 @@ import {
 	OtherItemData,
 	OtherItemName,
 	OtherItemsState,
-	QualityName
+	QualityName,
+	SetOtherItemsStateAction
 } from '../types'
 
 export const formatValue = (value: string): number => {
@@ -52,7 +54,7 @@ export const getFishItemFromData = (fishName: string): FishQuality | null => {
 export const getFishRowTotal = (fishAmount: string, fishItemQuality: string): number => {
 	const formattedFishAmount = parseInt(fishAmount)
 	const formattedFishQuality = parseInt(fishItemQuality)
-	if (isNaN(formattedFishQuality) || isNaN(formattedFishAmount)) {
+	if (Number.isNaN(formattedFishQuality) || Number.isNaN(formattedFishAmount)) {
 		return 0
 	}
 	return formattedFishAmount * formattedFishQuality
@@ -97,12 +99,12 @@ export const getTotal = (value: number, amount: number): number => value * amoun
 export const getTotalForFish = (fishItem: FishQuality, fishName: string, fishState: FishState): number => Object.keys(fishItem)
 	.reduce((acc: number, quality: string) => {
 		const fishAmount = getFishAmount(fishState, fishName, quality)
-		const fishItem = getFishItemFromData(fishName)
-		if (fishItem === null) {
+		const currentFishItem = getFishItemFromData(fishName)
+		if (currentFishItem === null) {
 			return acc
 		}
 		const formattedFishAmount = parseInt(fishAmount) || 0
-		const formattedFishQuality = parseInt(fishItem[quality as QualityName])
+		const formattedFishQuality = parseInt(currentFishItem[quality as QualityName])
 		const total = formattedFishAmount * formattedFishQuality
 		return acc + total
 	}, 0)
@@ -122,4 +124,17 @@ export const isValidOtherItemName = (itemName: string): itemName is OtherItemNam
 export const isValidValue = (value: string): number => {
 	if (value === '') return 0
 	return parseInt(value)
+}
+
+export const itemInputOnChange = (e: ChangeEvent<HTMLInputElement>, itemName: string, setState: SetOtherItemsStateAction, subItemName: string) => {
+	setState((prevState: OtherItemsState) => {
+		const prevItems = prevState[itemName]
+		return {
+			...prevState,
+			[itemName]: {
+				...prevItems,
+				[subItemName]: e.target.value
+			}
+		}
+	})
 }

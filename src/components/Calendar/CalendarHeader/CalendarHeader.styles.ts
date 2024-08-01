@@ -17,7 +17,7 @@ const makeStyles = (): CalendarHeaderStyles => ({
 		'&:hover': {
 			backgroundColor: 'transparent'
 		}
-	},	
+	},
     header: {
 		alignItems: 'center',
 		cursor: 'pointer',

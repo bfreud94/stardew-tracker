@@ -3,7 +3,7 @@ import { Season } from '../../../types'
 
 export interface NotesSectionProps {
 	day: number
-	season: Season	
+	season: Season
 }
 
 export interface NotesSectionStyles {

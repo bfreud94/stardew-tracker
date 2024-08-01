@@ -22,7 +22,8 @@ const EventContainer: FC<EventContainerProps> = ({
 					style={styles.eventButton}
 					sx={styles.eventButtonSx}
 					variant='outlined'
-					onClick={() => setShowEventDetails(!showEventDetails)}>
+					onClick={() => setShowEventDetails(!showEventDetails)}
+				>
 					{getButtonText(showEventDetails, 'Event Details')}
 				</Button>
 			</div>

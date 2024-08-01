@@ -2,7 +2,7 @@ import { VillagerMetaDataStyles } from './VillagerMetaData.types'
 
 const makeStyles = (): VillagerMetaDataStyles => ({
 	villagerBirthday: {
-		marginBottom: '5px' 
+		marginBottom: '5px'
 	},
 	villagerFamily: {
 		marginTop: '25px'

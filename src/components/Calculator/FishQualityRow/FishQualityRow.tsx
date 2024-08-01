@@ -27,9 +27,13 @@ const FishQualityRow: FC<FishQualityRowProps> = ({
 
 	return (
 		<div key={quality} style={styles.fishQualityRow}>
-			<ItemWithInput itemName={fishNameAndQuality} costAndMultiplier={multiplier}
-				ellipsesAndTotal={textRightOfInput} onChange={(e: ChangeEvent<HTMLInputElement>) => setFishState(e, fishName, quality, setState)}
-				value={fishAmount} />
+			<ItemWithInput
+				costAndMultiplier={multiplier}
+				ellipsesAndTotal={textRightOfInput}
+				itemName={fishNameAndQuality}
+				onChange={(e: ChangeEvent<HTMLInputElement>) => setFishState(e, fishName, quality, setState)}
+				value={fishAmount}
+			/>
 		</div>
 	)
 }

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactElement } from 'react'
 import AffinitiesSection from '../AffinitiesSection/AffinitiesSection'
 import { AFFINITIES } from '../../../constants'
 import { Affinity } from '../../../types'
@@ -14,7 +14,7 @@ const AffinitiesContainer: FC<AffinitiesContainerProps> = ({
 	return (
 		<div style={styles.affinitiesScrollableContainer}>
 			<div style={styles.affinitiesContainer}>
-				{AFFINITIES.map((affinity: Affinity): JSX.Element => (
+				{AFFINITIES.map((affinity: Affinity): ReactElement => (
 					<AffinitiesSection
 						key={affinity}
 						affinity={affinity}

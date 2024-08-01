@@ -1,4 +1,9 @@
-import { FishQuality, FishState, OtherItemsState, SubItems } from '../types'
+import {
+	FishQuality,
+	FishState,
+	OtherItemsState,
+	SubItems
+} from '../types'
 
 export const DEFAULT_FISH_STATE = {} as FishState
 
