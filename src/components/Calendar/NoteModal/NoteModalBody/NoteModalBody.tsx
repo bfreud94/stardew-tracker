@@ -46,6 +46,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 				/>
 			))}
 			{isValidVillager(villager) && <BirthdaySection showAffinities={showAffinities} setShowAffinities={setShowAffinities} villager={villager} />}
+			{showAffinities && <AffinitiesContainer villager={villager} />}
 			{validEvent && <EventContainer event={event} />}
 			<NoteInput note={note} setNote={setNote} />
 			<SubmitNoteButton
@@ -56,7 +57,6 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 				setNote={setNote}
 				setNoteEditIndex={setNoteEditIndex}
 				/>
-			{showAffinities && <AffinitiesContainer villager={villager} />}
 		</>
 	)
 }
