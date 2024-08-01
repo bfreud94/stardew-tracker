@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 import ItemWithInput from '../../ItemWithInput/ItemWithInput'
 import OtherItemHeader from '../OtherItemHeader/OtherItemHeader'
 import { getOtherItemCopy } from '../../../../copy'
@@ -29,9 +29,8 @@ const OtherItemComponent: FC<OtherItemsComponentProps> = ({
 							costAndMultiplier={costAndMultiplier}
 							ellipsesAndTotal={ellipsesAndTotal}
 							itemName={subItemName}
-							onChange={(e: ChangeEvent<HTMLInputElement>) =>
-								itemInputOnChange(e, itemName, setState, subItemName)
-							}
+							onChangeFunction={itemInputOnChange}
+							onChangeFunctionArgs={[itemName, setState, subItemName]}
 							value={subItemValue}
 						/>
 					</div>

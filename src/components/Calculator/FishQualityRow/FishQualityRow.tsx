@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react'
+import { FC } from 'react'
 import ItemWithInput from '../ItemWithInput/ItemWithInput'
 import { getFishQualityRowText } from '../../../copy'
 import { setFishState } from '../../../state'
@@ -31,7 +31,8 @@ const FishQualityRow: FC<FishQualityRowProps> = ({
 				costAndMultiplier={multiplier}
 				ellipsesAndTotal={textRightOfInput}
 				itemName={fishNameAndQuality}
-				onChange={(e: ChangeEvent<HTMLInputElement>) => setFishState(e, fishName, quality, setState)}
+				onChangeFunction={setFishState}
+				onChangeFunctionArgs={[fishName, quality, setState]}
 				value={fishAmount}
 			/>
 		</div>
