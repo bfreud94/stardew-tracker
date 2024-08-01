@@ -1,4 +1,6 @@
 import { FC, useState } from 'react'
+import AffinitiesContainer from '../../../shared/AffinitiesContainer/AffinitiesContainer'
+
 import BirthdaySection from '../BirthdaySection/BirthdaySection'
 import EventContainer from '../../../shared/EventContainer/EventContainer'
 import NoteInput from '../NoteInput/NoteInput'
@@ -19,6 +21,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 	season
 }) => {
 	const [note, setNote] = useState<string>('')
+	const [showAffinities, setShowAffinities] = useState<boolean>(false)
 	const [noteEditIndex, setNoteEditIndex] = useState<number>(-1)
 
 	const villager = getVillagerFromBirthday(day, season)
@@ -42,7 +45,8 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 					setNoteEditIndex={setNoteEditIndex}
 				/>
 			))}
-			{isValidVillager(villager) && <BirthdaySection villager={villager} />}
+			{isValidVillager(villager) && <BirthdaySection showAffinities={showAffinities} setShowAffinities={setShowAffinities} villager={villager} />}
+			{showAffinities && <AffinitiesContainer villager={villager} />}
 			{validEvent && <EventContainer event={event} />}
 			<NoteInput note={note} setNote={setNote} />
 			<SubmitNoteButton
@@ -52,7 +56,7 @@ const NoteModalBody: FC<NoteModalBodyProps> = ({
 				season={season}
 				setNote={setNote}
 				setNoteEditIndex={setNoteEditIndex}
-			/>
+				/>
 		</>
 	)
 }
