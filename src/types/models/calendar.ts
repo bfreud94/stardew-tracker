@@ -14,6 +14,7 @@ export type DataItems = {
 	gems: OtherItemData
 	minerals: OtherItemData
 	geodes: OtherItemData
+	'Misc Items': OtherItemData
 	[itemName: string]: FishData | OtherItemData
 }
 

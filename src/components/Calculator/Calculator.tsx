@@ -13,7 +13,8 @@ const Calculator: FC = () => {
 	const [otherItemsState, setOtherItemsState] = useState<OtherItemsState>({
 		gems: createOtherItemsState(data.items.gems),
 		minerals: createOtherItemsState(data.items.minerals),
-		geodes: createOtherItemsState(data.items.geodes)
+		geodes: createOtherItemsState(data.items.geodes),
+		'Misc Items': createOtherItemsState(data.items['Misc Items'])
 	})
 
 	const styles = makeStyles()

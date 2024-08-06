@@ -30,6 +30,7 @@ export interface OtherItemsState {
 	gems: SubItems
 	minerals: SubItems
 	geodes: SubItems
+	'Misc Items': SubItems
 	[itemName: string]: SubItems
 }
 

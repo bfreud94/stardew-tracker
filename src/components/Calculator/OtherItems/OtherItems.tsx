@@ -15,7 +15,7 @@ const OtherItems: FC<OtherItemsProps> = ({
 		<>
 			<OtherItemsHeader total={total} setState={setOtherItemsState} />
 			<div style={styles.otherItemContainer}>
-				{Object.keys(otherItemsState).map((item) => (
+				{Object.keys(otherItemsState).map((item: string) => (
 					<OtherItemComponent key={item} itemName={item} state={otherItemsState} setState={setOtherItemsState} />
 				))}
 			</div>
