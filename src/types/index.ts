@@ -1,4 +1,5 @@
 export * from './actions'
+export * from './benchmarks'
 export * from './calculator'
 export * from './calendar'
 export * from './models'

@@ -1,1 +1,1 @@
-export const APP_HEADER_ELEMENTS = ['Calendar', 'Calculator', 'Universal Affinities', 'Villager Directory', 'Random Events']
+export const APP_HEADER_ELEMENTS = ['Calendar', 'Calculator', 'Universal Affinities', 'Villager Directory', 'Random Events', 'Common Benchmarks']
