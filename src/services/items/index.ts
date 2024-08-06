@@ -65,6 +65,9 @@ const items: DataItems = {
 		Magma: 150,
 		Frozen: 100,
 		Normal: 50
+	},
+	'Misc Items': {
+		Clay: 20
 	}
 }
 

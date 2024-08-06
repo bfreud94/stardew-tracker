@@ -16,7 +16,7 @@ const ItemWithInput = ({
 			<span style={styles.itemName}>{itemName}</span>
 			<span style={styles.costAndMultiplier}>{costAndMultiplier}</span>
 			<input
-				onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeFunction(e.target.value, ...onChangeFunctionArgs)}
+				onChange={(e: ChangeEvent<HTMLInputElement>) => onChangeFunction(e, ...onChangeFunctionArgs)}
 				style={styles.inputAmount}
 				type='text'
 				value={value} />
