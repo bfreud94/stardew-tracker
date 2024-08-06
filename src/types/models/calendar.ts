@@ -9,7 +9,7 @@ export interface Data {
 	seasonalEvents: Array<SeasonalEvent>
 }
 
-type DataItems = {
+export type DataItems = {
 	fish: FishData
 	gems: OtherItemData
 	minerals: OtherItemData
@@ -39,7 +39,7 @@ export type FamilyMember = {
 	relationship: string
 }
 
-type RandomEvent = {
+export type RandomEvent = {
 	name: string
 	description: string
 	odds: string
