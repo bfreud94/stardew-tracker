@@ -1,6 +1,7 @@
 import { Navigate, NavigateFunction } from 'react-router-dom'
 import Calculator from '../components/Calculator/Calculator'
 import CalendarContainer from '../components/Calendar/CalendarContainer/CalendarContainer'
+import CommonBenchmarks from '../components/CommonBenchmarks/CommonBenchmarks'
 import RandomEvents from '../components/RandomEvents/RandomEvents'
 import UniversalAffinities from '../components/UniversalAffinities/UniversalAffinities'
 import VillagerDirectory from '../components/VillagerDirectory/VillagerDirectory'
@@ -29,6 +30,10 @@ export const getRoutes = (season: Season, setSeason: SetSeasonStateAction): Arra
 			component: <RandomEvents />
 		},
 		{
+			route: '/common-benchmarks',
+			component: <CommonBenchmarks />
+		},
+		{
 			route: '/',
 			component: <Navigate to='/calendar' replace />
 		}
@@ -51,6 +56,9 @@ export const setActiveComponent = (componentName: string, navigate: NavigateFunc
 			break
 		case 'Random Events':
 			navigate('/random-events')
+			break
+		case 'Common Benchmarks':
+			navigate('/common-benchmarks')
 			break
 		default:
 			navigate('/')
